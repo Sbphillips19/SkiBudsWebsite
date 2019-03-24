@@ -1,1 +1,5 @@
 # SkiBudsWebsite
+
+---
+
+## permalink: /index.html
