@@ -1,0 +1,80 @@
+img.logo {
+    width: 200px;
+}
+
+img.name {
+    width: 70%;
+}
+
+.iconSection {
+    margin-bottom: 10px;
+}
+
+h2.screenshotsTitle {
+    margin-bottom: 30px;
+}
+
+.display-2 {
+    font-weight: 500;
+}
+
+body {
+  padding-top: 56px;
+}
+
+section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+
+.main {
+    background: linear-gradient(rgb(1, 68, 238, .5), rgb(126, 128, 138,.5)), url("../images/WhistlerPeakView.jpg");
+/*    background-image: url('../images/WhistlerPeakView.jpg');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 600px;
+/*    opacity: .8*/
+}
+
+.txt-center {text-align: center; color: white;}
+
+/*
+@media only screen and (max-width: 600px) {
+  .main {
+    max-height: lightblue;
+  }
+}
+*/
+
+/*
+.main:before {
+    content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+    background-image: linear-gradient(to right bottom, #0561ea, #2848aa, #27316e, #1c1c38, #030303);
+	opacity: .5; 
+  }
+*/
+
+.lnr {
+    display: inline-block;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.05em;
+    stroke-width: 1;
+  }
+  
+  .services-icon {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+
+
+.cardScreenshot {
+    max-width: 300px;
+}
