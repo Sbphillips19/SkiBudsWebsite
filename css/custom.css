@@ -85,7 +85,7 @@ body {
   max-width: 300px;
 }
 
-.icon {
+a.icon {
   color: white;
   margin: 10px;
 }
