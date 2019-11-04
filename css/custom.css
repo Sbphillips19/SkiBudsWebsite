@@ -28,15 +28,12 @@ body {
   padding-top: 56px;
 }
 
-
-
 .main {
   background: linear-gradient(rgb(1, 68, 238, .5), rgb(126, 128, 138, .5)), url("../images/WhistlerPeakView.jpg");
   /*    background-image: url('../images/WhistlerPeakView.jpg');*/
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 600px;
-  /*    opacity: .8*/
 }
 
 .txt-center {
@@ -44,27 +41,6 @@ body {
   color: white;
   margin-top: 10px;
 }
-
-/*
-@media only screen and (max-width: 600px) {
-  .main {
-    max-height: lightblue;
-  }
-}
-*/
-
-/*
-.main:before {
-    content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-    background-image: linear-gradient(to right bottom, #0561ea, #2848aa, #27316e, #1c1c38, #030303);
-	opacity: .5; 
-  }
-*/
 
 .lnr {
   display: inline-block;
@@ -88,6 +64,7 @@ body {
 a.icon {
   color: white;
   margin: 10px;
+  cursor: pointer;
 }
 
 .iconSection {
