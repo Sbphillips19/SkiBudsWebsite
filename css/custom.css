@@ -133,6 +133,16 @@ a.icon {
   }
 }
 
+@media screen and (max-width: 450px) {
+  .affilDiv {
+    width: 250px;
+  }
+  
+  .snowpals {
+    width: 250px;
+  }
+}
+
 .baist {
   width: 200px;
 }
