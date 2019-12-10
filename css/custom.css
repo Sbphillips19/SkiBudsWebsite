@@ -127,6 +127,12 @@ a.icon {
   margin-left: 20px;
 }
 
+@media screen and (max-width: 700px) {
+  .containerAffiliates {
+    flex-direction: column;
+  }
+}
+
 .baist {
   width: 200px;
 }
