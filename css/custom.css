@@ -113,5 +113,20 @@ a.icon {
   /*    background-image: url('../images/WhistlerPeakView.jpg');*/
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 200px;
+  max-height: 370px;
+}
+
+.affilDiv {
+  width: 350px;
+  margin: 20px;
+}
+
+.containerAffiliates {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.baist {
+  width: 200px;
 }
