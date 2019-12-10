@@ -103,3 +103,15 @@ a.icon {
     margin-right: 0;
   }
 }
+
+.lead2 {
+  font-size: 2.5rem;
+}
+
+.main2 {
+  background: linear-gradient(rgb(1, 68, 238, .5), rgb(126, 128, 138, .5)), url("../images/WhistlerPeakView.jpg");
+  /*    background-image: url('../images/WhistlerPeakView.jpg');*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 200px;
+}
