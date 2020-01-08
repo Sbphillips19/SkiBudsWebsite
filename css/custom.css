@@ -117,7 +117,7 @@ a.icon {
 }
 
 .affilDiv {
-  width: 350px;
+  max-width: 350px;
   margin: 20px;
 }
 
@@ -144,5 +144,15 @@ a.icon {
 }
 
 .baist {
+  width: 150px;
+}
+
+.denverClimbing {
   width: 200px;
+}
+
+@media screen and (min-width: 700px) {
+  .denverClimbing {
+    margin-top: 40px;
+  }
 }
