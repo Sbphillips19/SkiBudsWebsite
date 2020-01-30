@@ -147,6 +147,10 @@ a.icon {
   width: 150px;
 }
 
+.cann-ad {
+  width: 150px;
+}
+
 .denverClimbing {
   width: 200px;
 }
@@ -155,4 +159,13 @@ a.icon {
   .denverClimbing {
     margin-top: 40px;
   }
+
+.cann-ad {
+    margin-top: 40px;
+  }
+
+  .ripatrip{
+    width: 200px
+  }
+  
 }
