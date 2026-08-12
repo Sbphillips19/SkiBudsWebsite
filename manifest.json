@@ -1,0 +1,14 @@
+{
+  "name": "SkiBuds",
+  "short_name": "SkiBuds",
+  "description": "Find your people on the mountain.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0144ee",
+  "icons": [
+    { "src": "/icons/android-icon-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/favicon-96x96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "/icons/favicon-32x32.png", "sizes": "32x32", "type": "image/png" }
+  ]
+}

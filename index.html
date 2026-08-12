@@ -1,242 +1,275 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Skibuds</title>
-  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkiBuds — Find Your People on the Mountain</title>
+  <meta name="description"
+    content="SkiBuds helps skiers and snowboarders find riding partners, track their runs, and follow mountain conditions. Coming soon to iOS and Android.">
+  <link rel="canonical" href="https://skibudsapp.com/">
+  <meta name="theme-color" content="#0144ee">
   <meta name="robots" content="all,follow">
-  <!-- Bootstrap CSS-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-  <!-- Custom stylesheet - for your changes-->
-  <link rel="stylesheet" href="css/custom.css">
-  <!-- Tweaks for older IEs-->
-  <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-  <link rel="apple-touch-icon" sizes="57x57" href="./icons/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="./icons/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="./icons/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="./icons/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="./icons/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="./icons/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="./icons/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="./icons/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="./icons/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="./icons/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SkiBuds — Find Your People on the Mountain">
+  <meta property="og:description"
+    content="Find riding partners, track your runs, and follow mountain conditions. Coming soon to iOS and Android.">
+  <meta property="og:url" content="https://skibudsapp.com/">
+  <meta property="og:image" content="https://skibudsapp.com/images/WhistlerPeakView.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="/css/custom.css">
   <link rel="manifest" href="/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
 
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "SkiBuds",
+    "url": "https://skibudsapp.com/",
+    "description": "A community app for skiers and snowboarders to find riding partners, record runs, and follow mountain conditions.",
+    "applicationCategory": "SocialNetworkingApplication",
+    "operatingSystem": "iOS, Android",
+    "publisher": { "@type": "Organization", "name": "PowWow, LLC" }
+  }
+  </script>
 </head>
 
 <body>
 
-  <!-- navbar-->
-  <nav class="navbar navbar-light navbar-expand-lg fixed-top shadow-sm bg-white"><a href="index.html"
-      class="navbar-brand"><img src="../images/SkiBudsName.png" alt="name" class="name"></a>
-
-    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-      class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
-    <div id="navbarSupportedContent" class="collapse navbar-collapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#screenshots" class="nav-link">Screenshots</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact Info</a></li>
-        <li class="nav-item"><a href="./affiliates.html" class="nav-link">Partners</a></li>
-      </ul>
-      <div class="navbar-text ml-lg-3">
-        <a href="#" class="btn btn-primary text-white shadow">Download App</a>
-      </div>
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__brand" aria-label="SkiBuds home">
+        <img src="/images/SkiBudsName.png" alt="SkiBuds">
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav__links">
+          <li><a href="#about">What it does</a></li>
+          <li><a href="#levels">Levels</a></li>
+          <li><a href="/affiliates.html">Partners</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#status" class="btn">Launch status</a>
     </div>
-  </nav>
+  </header>
 
-  <!-- Hero Section-->
-  <section class="bg-light main">
-    <div class="container">
-      <!-- <div class="txt-center">
-        <h1 class="display-2">SkiBuds</h1>
-      </div> -->
-      <div class="txt-center">
-        <img src="../images/logo.png" alt="logo" class="logo"></a>
-        <p class="lead">Click on Apple/ Google Play logo to download SkiBuds now!!!</p>
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="shell">
+        <img src="/images/logo.png" alt="" class="hero__logo rise" width="108">
+        <h1 class="rise rise--2">Find your people on the mountain</h1>
+        <p class="lede rise rise--3">
+          Ride together, track your day, and know what the snow is doing before you commit to a line.
+        </p>
+
+        <!-- Launch status board -->
+        <div class="board rise rise--3" id="status">
+          <div class="board__head">
+            <span>SkiBuds &middot; Launch status</span>
+            <span>2026</span>
+          </div>
+          <div class="board__row">
+            <span class="board__label">iOS</span>
+            <span class="board__state"><span class="dot" aria-hidden="true"></span>Coming soon</span>
+          </div>
+          <div class="board__row">
+            <span class="board__label">Android</span>
+            <span class="board__state"><span class="dot" aria-hidden="true"></span>Coming soon</span>
+          </div>
+          <div class="board__row">
+            <span class="board__label">Updates</span>
+            <a class="board__state" href="https://www.instagram.com/skibudsapp/" target="_blank"
+              rel="noopener">@skibudsapp &rarr;</a>
+          </div>
+        </div>
+
+        <p class="lede rise rise--3" style="margin-top:1.5rem;font-size:1rem;">
+          The app isn't in the stores while we rebuild it. Follow along for the launch.
+        </p>
+
+        <ul class="social">
+          <li><a href="https://www.instagram.com/skibudsapp/" target="_blank" rel="noopener"
+              aria-label="SkiBuds on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
+              </svg></a></li>
+          <li><a href="https://www.facebook.com/SkiBuds-366071947329933/" target="_blank" rel="noopener"
+              aria-label="SkiBuds on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5h1.65V4.6A22 22 0 0 0 14.3 4.5c-2.4 0-4 1.45-4 4.1v2.3H7.6V14h2.7v8Z" />
+              </svg></a></li>
+          <li><a href="https://www.youtube.com/channel/UC1XZ1Vhgs-0lSJJjroAATlg" target="_blank" rel="noopener"
+              aria-label="SkiBuds on YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M21.6 7.2a2.5 2.5 0 0 0-1.75-1.77C18.25 5 12 5 12 5s-6.25 0-7.85.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.75 1.77C5.75 19 12 19 12 19s6.25 0 7.85-.43a2.5 2.5 0 0 0 1.75-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1Z" />
+              </svg></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- What it does -->
+    <section class="band" id="about">
+      <div class="shell">
+        <p class="eyebrow">What it does</p>
+        <h2>Built for the day, not the desk</h2>
+        <p class="lede">
+          SkiBuds started on the chairlifts in Whistler, from conversations about what riders
+          actually wanted on the mountain. It's being rebuilt around the same idea.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            <h3>Ride with people at your level</h3>
+            <p>Find riders who ski the same mountains, at the same ability, looking for the same kind of day.</p>
+          </article>
+
+          <article class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path
+                d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8Z" />
+            </svg>
+            <h3>Keep your group together</h3>
+            <p>Message your crew, share photos from the day, and use opt-in location sharing to regroup.</p>
+          </article>
+
+          <article class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 20 10 5l4 8 2-3 5 10Z" />
+              <circle cx="12" cy="3.6" r="1.6" />
+            </svg>
+            <h3>Track your runs</h3>
+            <p>Record each run with GPS. Runs are separated from lift rides, so your vertical reflects what you
+              actually skied.</p>
+          </article>
+
+          <article class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6.5 6.5 0 0 0-12.6 1.8A3.6 3.6 0 0 0 6 19Z" />
+              <path d="M8 22.5l1-2M12 22.5l1-2M16 22.5l1-2" />
+            </svg>
+            <h3>Know the snow</h3>
+            <p>Forecasts and mountain observations in one place, so you can plan around the weather instead of
+              guessing.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ability levels -->
+    <section class="band band--tint" id="levels">
+      <div class="shell">
+        <p class="eyebrow">Ride at your level</p>
+        <h2>Matched the way the mountain is marked</h2>
+        <p class="lede">
+          You pick where you ride. SkiBuds matches you with people who ride there too &mdash; so nobody
+          is waiting at the bottom, and nobody is in over their head.
+        </p>
+
+        <div class="levels">
+          <div class="level">
+            <span class="level__mark mark-green" aria-hidden="true">&#9679;</span>
+            <span class="level__name">Green</span>
+            <span class="level__note">Learning the mountain. Groomers, easy terrain, no pressure.</span>
+          </div>
+          <div class="level">
+            <span class="level__mark mark-blue" aria-hidden="true">&#9632;</span>
+            <span class="level__name">Blue</span>
+            <span class="level__note">Comfortable most places. Happy to lap groomers all day.</span>
+          </div>
+          <div class="level">
+            <span class="level__mark mark-black" aria-hidden="true">&#9670;</span>
+            <span class="level__name">Black</span>
+            <span class="level__note">Steeps, bumps, and trees. Looking for people who keep up.</span>
+          </div>
+          <div class="level">
+            <span class="level__mark mark-black" aria-hidden="true">&#9670;&#9670;</span>
+            <span class="level__name">Backcountry</span>
+            <span class="level__note">Out of bounds and earning turns. Ride with a partner, always.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="band">
+      <div class="shell">
+        <p class="eyebrow">Partners</p>
+        <h2>Good people we ride with</h2>
+        <p class="lede">
+          SkiBuds works with shops, clubs, and trip organizers across North America.
+        </p>
+        <p style="margin-top:1.5rem;">
+          <a href="/affiliates.html" class="btn btn--quiet">See all partners &rarr;</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot" id="contact">
+    <div class="shell">
+      <div class="foot__grid">
         <div>
-          <a href="https://itunes.apple.com/us/app/skibuds/id1462003226?mt=8"
-            style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2019-05-02&kind=iossoftware&bubble=ios_apps) no-repeat;width: 203px;
-            height: 60px;background-size: cover;"></a>
+          <h3>SkiBuds</h3>
+          <ul>
+            <li><a href="mailto:PowWowLLC1@gmail.com">PowWowLLC1@gmail.com</a></li>
+          </ul>
         </div>
         <div>
-          <a
-            href='https://play.google.com/store/apps/details?id=com.skibuds&hl=en_US&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img
-              style="width:237px;margin-top:-12px;" alt='Get it on Google Play'
-              src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' /></a>
-        </div>
-      </div>
-      <div class="txt-center">
-        <p class="lead">Find friends to ski with based on your skill level</p>
-      </div>
-      <div class="txt-center">
-        <p class="lead"></p>
-        <a href="https://www.facebook.com/SkiBuds-366071947329933/" class="icon" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
-        <a href="https://www.instagram.com/skibudsapp/" class="icon" target="_blank"><i class="fab fa-instagram fa-3x"></i></a>
-        <a href="https://www.youtube.com/channel/UC1XZ1Vhgs-0lSJJjroAATlg" class="icon" target="_blank"><i class="fab fa-youtube fa-3x"></i></a>
-      </div>
-      <div class="txt-center">
-        <p>Check out the instagram and youtube channels to get live updates on snow conditions and daily interactions from the app</p>
-        <p>Be sure to post and tag your photos of skibuds swag on your gear @skibudsapp for a chance to be featured on the skibuds Facebook and instagram</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services-->
-  <section id="about">
-    <div class="container">
-      <h2>About SkiBuds</h2>
-      <p class="text-muted mb-5">IOS and Android chat app</p>
-      <p class="text-muted mb-5">Intended to help make the skiing experience more enjoyable</p>
-      <p class="text-muted mb-5">Will be adding in more features throughout the 2019-2020 ski season- email PowWowLLC1@gmail.com with requests</p>
-      <div class="row">
-        <div class="col-sm-6 col-lg-4 mb-3">
-          <div class="iconSection">
-            <i class="fas fa-skiing fa-2x"></i>
-          </div>
-          <h6>Find riders based on your level</h6>
-          <p class="text-muted">Pick from beginner all the way to backcountry</p>
-          <p class="text-muted">Find people who are looking to do similar runs with similar abilities so you don't have
-            to wait on anyone.</p>
-          <p class="text-muted">Stay safe in tree runs by riding with a buddy</p>
-        </div>
-        <div class="col-sm-6 col-lg-4 mb-3">
-          <div class="iconSection">
-            <i class="fas fa-comment fa-2x"></i>
-          </div>
-          <h6>Group and private chat</h6>
-          <p class="text-muted">Chat in any of the skill level channels or mountain specific channels if located within
-            100 miles of the mountain</p>
-          <p class="text-muted">General chat, travel, and carpool available in any location for those currently not
-            within 100 miles of the mountain</p>
-          <p class="text-muted">Private chat with individual users</p>
-        </div>
-        <div class="col-sm-6 col-lg-4 mb-3">
-          <div class="iconSection">
-            <i class="fas fa-mountain fa-2x"></i>
-          </div>
-          <h6>Made in Whistler</h6>
-          <p class="text-muted">Build throughout the 2018-2019 season in Whistler</p>
-          <p class="text-muted">Input taken from many people on the chairlifts, gondolas, and around the village</p>
-          <p class="text-muted">Live in IOS/Android stores. Released in Colorado 2019.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio-->
-  <section class="bg-light" id="screenshots">
-    <div class="container">
-      <h2 class="screenshotsTitle">Screenshots</h2>
-      <!--      <p class="lead text-muted mb-5">Chat with other riders of similar ability</p>-->
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card shadow border-0 h-100">
-            <div class="card-body">
-              <h5 class="text-dark">Chat with other users</h5>
-              <img src="../images/chat.png" alt="chat" class="cardScreenshot">
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card shadow border-0 h-100">
-            <div class="card-body">
-              <h5 class="text-dark">Set your riding preferences</h5>
-              <img src="../images/editProfile.png" alt="editProfile" class="cardScreenshot">
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card shadow border-0 h-100">
-            <div class="card-body">
-              <h5 class="text-dark">Talk to riders of different abilities and check in at mountains</h5>
-              <img src="../images/screenShotCheckIn.png" alt="chatChannels" class="cardScreenshot">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quote-->
-  <section>
-    <div class="container">
-      <blockquote class="blockquote text-center mb-0">
-        <svg class="lnr text-muted quote-icon pull-left">
-          <use xlink:href="#lnr-heart"> </use>
-        </svg>
-        <p class="mb-0">Lifes always better on the mountain</p>
-        <footer class="blockquote-footer">Someone famous in
-          <cite title="Source Title">Whistler</cite>
-        </footer>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- Footer-->
-  <div class="py-5 bg-light" id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <h5>SkiBuds</h5>
-          <ul class="contact-info list-unstyled">
-            <li><a href="mailto:PowWowLLC1@gmail.com" class="text-dark" target="_blank">PowWowLLC1@gmail.com</a></li>
+          <h3>Follow</h3>
+          <ul>
+            <li><a href="https://www.instagram.com/skibudsapp/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/SkiBuds-366071947329933/" target="_blank"
+                rel="noopener">Facebook</a></li>
+            <li><a href="https://www.youtube.com/channel/UC1XZ1Vhgs-0lSJJjroAATlg" target="_blank"
+                rel="noopener">YouTube</a></li>
           </ul>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <h5>Pages</h5>
-          <ul class="links list-unstyled">
-            <li> <a href="https://www.facebook.com/SkiBuds-366071947329933/" class="text-muted" target="_blank">Facebook</a></li>
-            <li> <a href="https://www.instagram.com/skibudsapp/" class="text-muted" target="_blank">Instagram</a></li>
-            <li> <a href="https://www.youtube.com/channel/UC1XZ1Vhgs-0lSJJjroAATlg" class="text-muted" target="_blank">Youtube</a></li>
-            <li> <a href="/terms" class="text-muted">Terms of Service</a></li>
-            <li> <a href="/privacy" class="text-muted">Privacy Policy</a></li>
+        <div>
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/terms.html">Terms of Service</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
           </ul>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <h5>Contact about work and listing additional mountains/ affiliates</h5>
-          <ul class="links list-unstyled">
-            <li> <a href="https://www.linkedin.com/in/stephen-b-phillips/" class="text-muted">LinkedIn</a></li>
+        <div>
+          <h3>Partnerships</h3>
+          <ul>
+            <li><a href="/affiliates.html">Partners</a></li>
+            <li><a href="https://www.linkedin.com/in/stephen-b-phillips/" target="_blank"
+                rel="noopener">LinkedIn</a></li>
           </ul>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="py-3 bg-dark text-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-7 text-center text-md-left">
-          <p class="mb-md-0">&copy; 2019 PowWow, LLC. All rights reserved. </p>
-        </div>
+      <div class="foot__base">
+        <p>&copy; 2026 PowWow, LLC. All rights reserved.</p>
+        <p>Built in Whistler, BC</p>
       </div>
     </div>
-  </div>
+  </footer>
 
-  <!-- JavaScript files-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
-    integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
-    crossorigin="anonymous"></script>
-
-</html>
 </body>
 
 </html>
