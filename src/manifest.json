@@ -1,0 +1,47 @@
+{
+  "name": "SkiBuds — Find Your People on the Mountain",
+  "short_name": "SkiBuds",
+  "description": "A community app for skiers and snowboarders to find riding partners, track runs, and follow mountain conditions. Coming soon to iOS and Android.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070c17",
+  "theme_color": "#0144ee",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["sports", "social", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icons/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/android-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/WhistlerPeakView.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "SkiBuds hero view — Whistler peak"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Follow on Instagram",
+      "short_name": "Instagram",
+      "description": "Follow @skibudsapp for launch updates",
+      "url": "https://www.instagram.com/skibudsapp/",
+      "icons": [{ "src": "/icons/android-icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": []
+}

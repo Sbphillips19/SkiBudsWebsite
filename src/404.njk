@@ -1,0 +1,21 @@
+---
+layout: base.njk
+title: Page Not Found
+description: Sorry, we couldn't find that page.
+eleventyExcludeFromCollections: true
+noindex: true
+permalink: 404.html
+---
+
+  <div class="shell error-page">
+    <div class="error-page__code">404</div>
+    <h1 class="error-page__title">Page not found</h1>
+    <p class="lede error-page__description">
+      Looks like you've gone off-piste. The page you're looking for doesn't exist or has been moved.
+    </p>
+    <div class="error-page__actions">
+      <a href="/" class="btn">Back to base lodge</a>
+      <a href="/blog" class="btn btn--quiet">Check the blog</a>
+      <a href="/faq" class="btn btn--quiet">Read the FAQ</a>
+    </div>
+  </div>

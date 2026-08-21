@@ -1,0 +1,416 @@
+{
+  "site": {
+    "name": "SkiBuds",
+    "shortName": "SkiBuds",
+    "description": "Trouve tes gens sur la montagne. Une application communautaire pour skieurs et planchistes pour trouver des partenaires de ride, tracker tes descentes et suivre les conditions en montagne.",
+    "url": "https://skibudsapp.com",
+    "email": "PowWowLLC1@gmail.com",
+    "company": "PowWow, LLC",
+    "location": "Whistler, BC",
+    "year": 2026,
+    "themeColor": "#0144ee",
+    "social": {
+      "instagram": "https://www.instagram.com/skibudsapp/",
+      "facebook": "https://www.facebook.com/SkiBuds-366071947329933/",
+      "youtube": "https://www.youtube.com/channel/UC1XZ1Vhgs-0lSJJjroAATlg",
+      "linkedin": "https://www.linkedin.com/in/stephen-b-phillips/"
+    },
+    "app": {
+      "iosStatus": "Prochainement",
+      "androidStatus": "Prochainement",
+      "launchYear": "2026"
+    },
+    "partners": [
+      {
+        "name": "RiPaTrip",
+        "url": "https://ripatrip.com/",
+        "logo": "ripatrip_logo_green.png",
+        "description": "ripatrip.com",
+        "category": "trip-organizer"
+      },
+      {
+        "name": "SnowPals",
+        "url": "http://snowpals.org/",
+        "logo": "snowpals.png",
+        "description": "Pour les voyages ski au Lac Tahoe, rejoins SnowPals.org — un club de sports de neige de la région de San Francisco pour professionnels occupés, depuis 1999.",
+        "category": "club"
+      },
+      {
+        "name": "BAIST Apparel",
+        "url": "https://baistapparel.com/",
+        "logo": "baist.png",
+        "description": "baistapparel.com",
+        "category": "shop"
+      },
+      {
+        "name": "Denver Climbing Company",
+        "url": "https://www.denverclimbingcompany.com",
+        "logo": "DenverClimbing.png",
+        "description": "denverclimbingcompany.com",
+        "category": "shop"
+      }
+    ],
+    "waitlist": {
+      "count": 1247
+    }
+  },
+  "nav": {
+    "about": "Ce que ça fait",
+    "levels": "Niveaux",
+    "partners": "Partenaires",
+    "blog": "Actualités",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "launchStatus": "Statut du lancement"
+  },
+  "hero": {
+    "title": "Trouve tes gens sur la montagne",
+    "lede": "Ride ensemble, track ta journée, et connais la neige avant de t'engager dans une ligne.",
+    "notInStores": "L'appli n'est pas encore dans les stores pendant qu'on la reconstruit. Suis-nous pour le lancement.",
+    "waitlistLabel": "riders sur la liste d'attente",
+    "joinWaitlist": "Rejoindre la liste",
+    "emailPlaceholder": "ton@email.com"
+  },
+  "board": {
+    "title": "SkiBuds · Statut du lancement",
+    "year": "2026",
+    "ios": "iOS",
+    "android": "Android",
+    "iosStatus": "Prochainement",
+    "androidStatus": "Prochainement",
+    "updates": "Actualités"
+  },
+  "features": {
+    "title": "Ce que ça fait",
+    "subtitle": "Conçu pour la journée, pas pour le bureau",
+    "description": "SkiBuds est né sur les télésièges de Whistler, des conversations sur ce que les riders veulent vraiment sur la montagne. Elle est reconstruite autour de la même idée.",
+    "cards": [
+      {
+        "title": "Ride avec des gens à ton niveau",
+        "description": "Trouve des riders qui skient les mêmes montagnes, au même niveau, cherchant le même genre de journée."
+      },
+      {
+        "title": "Garde ton groupe uni",
+        "description": "Message ton crew, partage les photos de la journée, et utilise le partage de position optionnel pour vous retrouver."
+      },
+      {
+        "title": "Track tes descentes",
+        "description": "Enregistre chaque run avec GPS. Les runs sont séparés des remontées, donc ton dénivelé reflète ce que tu as vraiment skié."
+      },
+      {
+        "title": "Connais la neige",
+        "description": "Prévisions et observations météo en un seul endroit, pour planifier selon la météo au lieu de deviner."
+      }
+    ]
+  },
+  "levels": {
+    "title": "Ride à ton niveau",
+    "subtitle": "Classé comme les pistes de la montagne",
+    "description": "Tu choisis où tu rides. SkiBuds te match avec des gens qui y ride aussi — donc personne n'attend en bas, et personne n'est dépassé.",
+    "levels": [
+      {
+        "name": "Vert",
+        "description": "Apprendre la montagne. Pistes damées, terrain facile, zéro pression."
+      },
+      {
+        "name": "Bleu",
+        "description": "À l'aise partout. Heureux de lapper les pistes damées toute la journée."
+      },
+      {
+        "name": "Noir",
+        "description": "Raides, bosses, et arbres. Cherche des gens qui suivent le rythme."
+      },
+      {
+        "name": "Hors-piste",
+        "description": "Hors des sentiers battus et gagner ses virages. Ride avec un partenaire, toujours."
+      }
+    ]
+  },
+  "partners": {
+    "title": "Partenaires",
+    "subtitle": "De bonnes personnes avec qui on ride",
+    "description": "SkiBuds collabore avec des magasins, clubs et organisateurs de voyages à travers l'Amérique du Nord.",
+    "seeAll": "Voir tous les partenaires →",
+    "filterAll": "Tous",
+    "filterShop": "Magasins",
+    "filterClub": "Clubs",
+    "filterTrip": "Organisateurs de voyages"
+  },
+  "waitlist": {
+    "counter": "riders sur la liste d'attente",
+    "formTitle": "Rejoins la liste d'attente",
+    "emailPlaceholder": "ton@email.com",
+    "submitButton": "Rejoindre la liste",
+    "successMessage": "T'es sur la liste ! 🎿",
+    "errorMessage": "Quelque chose s'est mal passé. Réessaie."
+  },
+  "social": {
+    "instagram": "SkiBuds sur Instagram",
+    "facebook": "SkiBuds sur Facebook",
+    "youtube": "SkiBuds sur YouTube"
+  },
+  "footer": {
+    "email": "SkiBuds",
+    "follow": "Suivre",
+    "legal": "Légal",
+    "partnerships": "Partenariats",
+    "terms": "Conditions d'utilisation",
+    "privacy": "Politique de confidentialité",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "linkedin": "LinkedIn",
+    "copyright": "© {{ year }} {{ company }}. Tous droits réservés.",
+    "location": "Construit à {{ location }}"
+  },
+  "legal": {
+    "lastUpdated": "Dernière mise à jour : {{ date }}",
+    "toc": "Sommaire",
+    "backToTop": "Retour en haut",
+    "home": "Accueil"
+  },
+  "faq": {
+    "title": "Foire aux questions",
+    "general": "Général",
+    "features": "Fonctionnalités de l'appli",
+    "privacy": "Confidentialité et Sécurité",
+    "account": "Compte et Données",
+    "launch": "Lancement et Disponibilité",
+    "questions": [
+      {
+        "id": "what-is-skibuds",
+        "question": "C'est quoi SkiBuds ?",
+        "answer": "SkiBuds est une appli communautaire pour skieurs et planchistes pour trouver des partenaires de ride, tracker les descentes et suivre les conditions en montagne. Que tu cherches quelqu'un pour lapper les pistes damées, explorer le hors-piste, ou juste connaître le bulletin neige avant de t'engager — SkiBuds te connecte avec des gens qui ride à ton niveau, sur ta montagne."
+      },
+      {
+        "id": "who-is-skibuds-for",
+        "question": "SkiBuds, c'est pour qui ?",
+        "answer": "SkiBuds est pour tous les 18+ qui skient ou font du snowboard — des débutants sur la piste verte aux vétérans du hors-piste qui gagnent leurs virages. L'appli te match par niveau (Vert, Bleu, Noir, Hors-piste) donc personne n'attend en bas et personne n'est dépassé."
+      },
+      {
+        "id": "how-matching-works",
+        "question": "Comment fonctionne le matching ?",
+        "answer": "Tu choisis tes montagnes, ton niveau, et le genre de journée que tu cherches (pistes damées chill, raides & arbres, hors-piste, etc.). SkiBuds te montre les autres riders qui matchent — même montagne, même niveau, même vibe. Tu peux discuter, partager ta position, et planifier ta journée ensemble."
+      },
+      {
+        "id": "is-skibuds-free",
+        "question": "SkiBuds est gratuit ?",
+        "answer": "Oui, l'appli de base est gratuite à télécharger et utiliser. Pas de frais d'abonnement pour trouver des partenaires, tracker les runs, ou checker les conditions."
+      },
+      {
+        "id": "run-tracking",
+        "question": "Le tracking des runs — comment ça marche ?",
+        "answer": "Lance une session quand tu montes sur les remontées. SkiBuds utilise le GPS pour enregistrer chaque run, en séparant automatiquement les remontées du vrai ski pour que ton dénivelé reflète ce que tu as vraiment skié. Vois tes stats : dénivelé, nombre de runs, vitesse max, et la carte de ta journée."
+      },
+      {
+        "id": "offline-usage",
+        "question": "Je peux utiliser SkiBuds hors ligne ?",
+        "answer": "Le tracking des runs fonctionne hors ligne — le GPS n'a pas besoin de réseau. Les cartes, conditions et messages se synchronisent quand tu retrouves du réseau. Le PWA met aussi l'appli en cache pour l'accès hors ligne."
+      },
+      {
+        "id": "mountains-supported",
+        "question": "Quelles montagnes sont supportées ?",
+        "answer": "SkiBuds supporte les grandes stations d'Amérique du Nord au lancement, avec d'autres ajoutées régulièrement. Tu peux aussi ajouter des spots custom pour le sidecountry ou les petites collines moins connues."
+      },
+      {
+        "id": "live-location",
+        "question": "Comment fonctionne le partage de position en direct ?",
+        "answer": "Opt-in seulement. Quand t'es sur la montagne avec ton crew, tu peux activer le partage de position direct pour vous voir sur la carte. C'est désactivé par défaut, expire automatiquement en fin de journée, et tu peux l'éteindre quand tu veux."
+      },
+      {
+        "id": "snow-data-source",
+        "question": "D'où viennent les données neige ?",
+        "answer": "On agrège les prévisions et observations de NOAA, OpenSnow, les données reportées par les stations, et les soumissions de la communauté — tout au même endroit pour planifier selon la météo au lieu de deviner."
+      },
+      {
+        "id": "data-collection",
+        "question": "Quelles données collectez-vous ?",
+        "answer": "Seulement ce qui est nécessaire pour faire marcher l'appli : infos de compte (email, username), position (avec permission, pour le matching et le tracking), analytics d'usage, et contenu que tu crées (messages, photos). Lis notre Politique de confidentialité complète."
+      },
+      {
+        "id": "location-data-sold",
+        "question": "Mes données de position sont-elles vendues ?",
+        "answer": "Jamais. On ne vend pas tes données à qui que ce soit. La position sert uniquement à te matcher avec des riders proches et tracker tes runs. Tu contrôles les permissions au niveau système."
+      },
+      {
+        "id": "account-security",
+        "question": "Comment sécurisez-vous les comptes ?",
+        "answer": "On utilise Firebase Authentication avec gestion sécurisée des mots de passe, 2FA optionnel via login social (Google, Apple), et données chiffrées en transit et au repos. Audits de sécurité réguliers et contrôles d'accès protègent tes infos."
+      },
+      {
+        "id": "delete-account",
+        "question": "Je peux supprimer mon compte ?",
+        "answer": "Oui. Va dans Paramètres → Compte → Supprimer le compte dans l'appli, ou envoie-nous un email à PowWowLLC1@gmail.com. On traite les demandes de suppression sous 30 jours."
+      },
+      {
+        "id": "need-account",
+        "question": "J'ai besoin d'un compte pour SkiBuds ?",
+        "answer": "Oui — un compte te permet de trouver des partenaires, sauver tes préférences, tracker tes runs dans le temps, et synchroniser entre appareils. L'inscription prend 30 secondes avec email ou login social."
+      },
+      {
+        "id": "multi-device",
+        "question": "Je peux utiliser SkiBuds sur plusieurs appareils ?",
+        "answer": "Oui. Ton compte se synchronise entre iOS et Android. Ton historique de runs, partenaires, et préférences te suivent partout."
+      },
+      {
+        "id": "report-abuse",
+        "question": "Comment signaler un problème ou un utilisateur abusif ?",
+        "answer": "Chaque profil et message a un bouton 'Signaler'. On examine les signalements sous 24h et on agit — suppression de contenu et bannissement des utilisateurs qui violent nos Conditions d'utilisation."
+      },
+      {
+        "id": "launch-date",
+        "question": "Quand est-ce que SkiBuds lance ?",
+        "answer": "On vise 2026 pour iOS et Android. L'appli est reconstruite de zéro — inscris-toi sur la liste d'attente pour l'accès anticipé."
+      },
+      {
+        "id": "waitlist-signup",
+        "question": "Comment m'inscrire sur la liste d'attente ?",
+        "answer": "Entre ton email sur la page d'accueil ou suis @skibudsapp pour les mises à jour. Les membres de la liste d'attente ont accès TestFlight/Play Console avant le lancement public."
+      },
+      {
+        "id": "web-version",
+        "question": "Y aura-t-il une version web ?",
+        "answer": "SkiBuds est mobile-first (iOS/Android). Un tableau de bord web compagnon pour voir les stats et gérer ton profil est prévu post-lancement."
+      },
+      {
+        "id": "partner-inquiry",
+        "question": "Je suis un magasin/club/organisateur de voyages — comment devenir partenaire ?",
+        "answer": "On adorait travailler avec toi. Envoie un email à PowWowLLC1@gmail.com ou visite notre page Partenaires pour en savoir plus."
+      }
+    ],
+    "waitlistHowTo": {
+      "title": "Comment rejoindre la liste d'attente SkiBuds",
+      "description": "Rejoins la liste d'attente SkiBuds pour avoir un accès anticipé à l'appli avant le lancement public.",
+      "steps": [
+        {
+          "name": "Visite la page d'accueil SkiBuds",
+          "text": "Va sur https://skibudsapp.com/ et descends à la section liste d'attente."
+        },
+        {
+          "name": "Entre ton adresse email",
+          "text": "Tape ton email dans le champ 'ton@email.com'."
+        },
+        {
+          "name": "Clique 'Rejoindre la liste'",
+          "text": "Envoie le formulaire. Tu verras un message de confirmation quand c'est réussi."
+        },
+        {
+          "name": "Suis pour les mises à jour",
+          "text": "Suis @skibudsapp sur Instagram pour les mises à jour de lancement et annonces d'accès anticipé."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "Comment marche SkiBuds",
+      "description": "Trouve des partenaires de ride, track tes runs, et suis les conditions en montagne avec SkiBuds.",
+      "steps": [
+        {
+          "name": "Crée un compte",
+          "text": "Inscris-toi avec email ou login social (Google, Apple). 30 secondes."
+        },
+        {
+          "name": "Configure tes préférences",
+          "text": "Choisis tes montagnes, ton niveau (Vert/Bleu/Noir/Hors-piste), et ton style de ride."
+        },
+        {
+          "name": "Trouve des partenaires",
+          "text": "Parcours les riders qui matchent ta montagne, ton niveau, et ta vibe. Envoie-leur un message pour connecter."
+        },
+        {
+          "name": "Track ta journée",
+          "text": "Lance une session quand tu montes sur les remontées. SkiBuds enregistre les runs, sépare les remontées, et map ta journée."
+        },
+        {
+          "name": "Check les conditions",
+          "text": "Voie les prévisions, rapports des stations, et observations de la communauté au même endroit avant de t'engager dans une ligne."
+        }
+      ]
+    }
+  },
+  "offline": {
+    "title": "Hors ligne",
+    "description": "Vous êtes hors ligne. Certaines fonctionnalités peuvent ne pas être disponibles.",
+    "icon": "📡",
+    "title": "Vous êtes hors ligne",
+    "description": "Il semble que vous ayez perdu la connexion. Certaines fonctionnalités comme l'inscription à la liste d'attente et les liens sociaux peuvent ne pas fonctionner tant que vous n'êtes pas de retour en ligne.",
+    "note": "Le suivi des runs et le contenu mis en cache fonctionneront toujours. Vos données se synchroniseront quand vous vous reconnecterez.",
+    "tryAgain": "Réessayer",
+    "goHome": "Accueil"
+  },
+  "404": {
+    "title": "Page non trouvée",
+    "description": "Désolé, nous n'avons pas trouvé cette page.",
+    "code": "404",
+    "title": "Page non trouvée",
+    "description": "On dirait que vous êtes hors-piste. La page que vous cherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour au chalet",
+    "checkBlog": "Voir le blog",
+    "readFAQ": "Lire la FAQ"
+  },
+  "blog": {
+    "title": "Actualités",
+    "subtitle": "Mises à jour de lancement, spotlights fonctionnalités, et coulisses de l'équipe qui reconstruit SkiBuds.",
+    "readMore": "Lire la suite →",
+    "noUpdates": "Pas encore de mises à jour. Revenez bientôt !",
+    "tags": ["lancement", "mises à jour", "liste d'attente"],
+    "allUpdates": "← Toutes les actualités",
+    "tagsLabel": "Tags"
+  },
+  "partnersPage": {
+    "title": "Partenaires",
+    "subtitle": "De bonnes personnes avec qui on ride",
+    "description": "Magasins, clubs et organisateurs de voyages avec qui on collabore à travers l'Amérique du Nord. Envie d'être listé ? Contactez-nous.",
+    "getInTouch": "Contactez-nous",
+    "filterAll": "Tous",
+    "filterShop": "Magasins",
+    "filterClub": "Clubs",
+    "filterTrip": "Organisateurs de voyages",
+    "categoryShop": "Magasin",
+    "categoryClub": "Club",
+    "categoryTrip": "Organisateur de voyages"
+  },
+  "legal": {
+    "lastUpdated": "Dernière mise à jour : {{ date }}",
+    "toc": "Sommaire",
+    "backToTop": "Retour en haut",
+    "home": "Accueil"
+  },
+  "offline": {
+    "icon": "📡",
+    "title": "Vous êtes hors ligne",
+    "description": "Il semble que vous ayez perdu la connexion. Certaines fonctionnalités comme l'inscription à la liste d'attente et les liens sociaux peuvent ne pas fonctionner tant que vous n'êtes pas de retour en ligne.",
+    "note": "Le suivi des runs et le contenu mis en cache fonctionneront toujours. Vos données se synchroniseront quand vous vous reconnecterez.",
+    "tryAgain": "Réessayer",
+    "goHome": "Accueil"
+  },
+  "404": {
+    "title": "Page non trouvée",
+    "description": "Désolé, nous n'avons pas trouvé cette page.",
+    "code": "404",
+    "title": "Page non trouvée",
+    "description": "On dirait que vous êtes hors-piste. La page que vous cherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour au chalet",
+    "checkBlog": "Voir le blog",
+    "readFAQ": "Lire la FAQ"
+  },
+  "waitlist": {
+    "counter": "riders sur la liste d'attente",
+    "formTitle": "Rejoins la liste d'attente",
+    "emailPlaceholder": "ton@email.com",
+    "submitButton": "Rejoindre la liste",
+    "successMessage": "T'es sur la liste ! 🎿",
+    "errorMessage": "Quelque chose s'est mal passé. Réessaie.",
+    "networkError": "Erreur réseau. Réessayez."
+  },
+  "cookieConsent": {
+    "message": "Nous respectons votre vie privée. Nous utilisons l'analytique pour améliorer votre expérience. En savoir plus.",
+    "learnMore": "En savoir plus",
+    "accept": "Accepter",
+    "decline": "Refuser"
+  },
+  "pwaInstall": {
+    "title": "Installer SkiBuds",
+    "description": "Ajoutez à l'écran d'accueil pour l'accès hors ligne et des chargements plus rapides.",
+    "install": "Installer",
+    "later": "Plus tard"
+  }
+}

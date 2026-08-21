@@ -1,0 +1,51 @@
+---
+permalink: sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{ site.url }}/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-08-20</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}/affiliates/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-20</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}/privacy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2026-06-07</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}/terms/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2026-06-07</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}/faq/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-08-20</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-20</lastmod>
+  </url>
+  {% for post in collections.blog %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>{{ post.date | isoDate }}</lastmod>
+  </url>
+  {% endfor %}
+</urlset>

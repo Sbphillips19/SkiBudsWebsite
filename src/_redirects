@@ -1,0 +1,17 @@
+# Vercel Redirects Configuration
+# https://vercel.com/docs/concepts/projects/project-configuration#redirects
+
+# Redirect .html extensions to extensionless URLs (canonical)
+/affiliates.html /affiliates 301
+/privacy.html /privacy 301
+/terms.html /terms 301
+
+# Ensure trailing slash on root
+/ / 200
+
+# Normalize extensionless routes to trailing-slash URLs (match canonicals)
+/affiliates /affiliates/ 301
+/privacy /privacy/ 301
+/terms /terms/ 301
+/faq /faq/ 301
+/blog /blog/ 301

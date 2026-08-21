@@ -1,0 +1,49 @@
+---
+layout: base.njk
+---
+
+<article class="blog-post">
+  <header class="blog-post__header">
+    <p class="blog-post__meta">
+      <time datetime="{{ page.date }}">{{ page.date | dateDisplay }}</time>
+      {% if tags %}
+        {% for tag in tags %}
+          <span class="blog-post__tag">{{ tag }}</span>
+        {% endfor %}
+      {% endif %}
+    </p>
+    <h1>{{ title }}</h1>
+    {% if description %}
+      <p class="blog-post__description">{{ description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="blog-post__content">
+    {{ content | safe }}
+  </div>
+
+  <footer class="blog-post__footer">
+    <hr>
+    <p><a href="/blog">← All updates</a> · <a href="/">Home</a></p>
+  </footer>
+</article>
+
+<!-- Content engagement: fires once when the reader scrolls past 50% of the article -->
+<script>
+  (function() {
+    var article = document.querySelector('.blog-post');
+    if (!article) return;
+    var sent = false;
+    function check() {
+      if (sent) return;
+      var rect = article.getBoundingClientRect();
+      if (rect.top + rect.height * 0.5 <= (window.innerHeight || document.documentElement.clientHeight)) {
+        sent = true;
+        window.removeEventListener('scroll', check);
+        if (window.trackEvent) window.trackEvent('Content Engaged', { page: location.pathname });
+      }
+    }
+    window.addEventListener('scroll', check, { passive: true });
+    check();
+  })();
+</script>

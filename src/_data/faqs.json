@@ -1,0 +1,114 @@
+{
+  "sections": [
+    {
+      "id": "general",
+      "title": "General",
+      "items": [
+        {
+          "q": "What is SkiBuds?",
+          "a": "SkiBuds is a community app for skiers and snowboarders to find riding partners, track runs, and follow mountain conditions. Whether you're looking for someone to lap groomers with, explore backcountry terrain, or just want to know the snow report before you commit to a line — SkiBuds connects you with people who ride at your level, at your mountain."
+        },
+        {
+          "q": "Who is SkiBuds for?",
+          "a": "SkiBuds is for anyone 18+ who skis or snowboards — from first-timers on the bunny hill to backcountry veterans earning their turns. The app matches you by ability level (Green, Blue, Black, Backcountry) so nobody waits at the bottom and nobody gets in over their head."
+        },
+        {
+          "q": "How does the matching work?",
+          "a": "You select your home mountains, ability level, and the kind of day you're looking for (chill groomers, steeps & trees, backcountry, etc.). SkiBuds shows you other riders who match — same mountain, same level, same vibe. You can message, share location, and plan your day together."
+        },
+        {
+          "q": "Is SkiBuds free?",
+          "a": "Yes, the core app is free to download and use. There are no subscription fees for finding partners, tracking runs, or checking conditions."
+        }
+      ]
+    },
+    {
+      "id": "app-features",
+      "title": "App Features",
+      "items": [
+        {
+          "q": "Run tracking — how does it work?",
+          "a": "Start a session when you hit the lifts. SkiBuds uses GPS to record each run, automatically separating lift rides from actual skiing so your vertical reflects what you actually skied. View stats like vertical feet, run count, max speed, and a map of your day."
+        },
+        {
+          "q": "Can I use SkiBuds offline?",
+          "a": "Run tracking works offline — GPS doesn't need cell service. Maps, conditions, and messaging sync when you're back online. The PWA also caches the app shell for offline access."
+        },
+        {
+          "q": "What mountains are supported?",
+          "a": "SkiBuds supports major resorts across North America at launch, with more added regularly. You can also add custom locations for sidecountry or lesser-known hills."
+        },
+        {
+          "q": "How does live location sharing work?",
+          "a": "Opt-in only. When you're on the mountain with your crew, you can toggle live location sharing to see each other on the map. It's off by default, expires automatically at end of day, and you can turn it off anytime."
+        },
+        {
+          "q": "Where does the snow data come from?",
+          "a": "We aggregate forecasts and observations from NOAA, OpenSnow, resort-reported data, and community submissions — all in one place so you can plan around the weather instead of guessing."
+        }
+      ]
+    },
+    {
+      "id": "privacy-security",
+      "title": "Privacy & Security",
+      "items": [
+        {
+          "q": "What data do you collect?",
+          "a": "Only what's needed to make the app work: account info (email, username), location (with permission, for matching and run tracking), usage analytics, and content you create (messages, photos). <a href=\"/privacy\">Read our full Privacy Policy</a>."
+        },
+        {
+          "q": "Is my location data sold?",
+          "a": "Never. We don't sell your data to anyone. Location is used solely for matching you with nearby riders and tracking your runs. You control permissions at the system level."
+        },
+        {
+          "q": "How do you keep accounts secure?",
+          "a": "We use Firebase Authentication with secure password handling, optional 2FA via social login (Google, Apple), and encrypted data in transit and at rest. Regular security audits and access controls protect your information."
+        },
+        {
+          "q": "Can I delete my account?",
+          "a": "Yes. Go to Settings → Account → Delete Account in the app, or email us at <a href=\"mailto:PowWowLLC1@gmail.com?subject=Data%20Deletion%20Request\">PowWowLLC1@gmail.com</a>. We process deletion requests within 30 days."
+        }
+      ]
+    },
+    {
+      "id": "account",
+      "title": "Account & Data",
+      "items": [
+        {
+          "q": "Do I need an account to use SkiBuds?",
+          "a": "Yes — an account lets you find partners, save preferences, track runs over time, and sync across devices. Sign up takes 30 seconds with email or social login."
+        },
+        {
+          "q": "Can I use SkiBuds on multiple devices?",
+          "a": "Yes. Your account syncs across iOS and Android. Run history, partners, and preferences follow you."
+        },
+        {
+          "q": "How do I report a problem or abusive user?",
+          "a": "Every profile and message has a \"Report\" button. We review reports within 24 hours and take action — including removing content and banning users who violate our <a href=\"/terms\">Terms of Service</a>."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch & Availability",
+      "items": [
+        {
+          "q": "When does SkiBuds launch?",
+          "a": "We're targeting <strong>2026</strong> for iOS and Android. The app is being rebuilt from the ground up — sign up for the waitlist to get early access."
+        },
+        {
+          "q": "How do I get on the waitlist?",
+          "a": "Enter your email on the <a href=\"/\">homepage</a> or follow <a href=\"https://www.instagram.com/skibudsapp/\" target=\"_blank\" rel=\"noopener\">@skibudsapp</a> for updates. Waitlist members get TestFlight/Play Console access before public launch."
+        },
+        {
+          "q": "Will there be a web version?",
+          "a": "SkiBuds is mobile-first (iOS/Android). A companion web dashboard for viewing stats and managing your profile is planned for post-launch."
+        },
+        {
+          "q": "I'm a shop/club/trip organizer — how do I partner?",
+          "a": "We'd love to work with you. Email <a href=\"mailto:PowWowLLC1@gmail.com\">PowWowLLC1@gmail.com</a> or visit our <a href=\"/affiliates\">Partners page</a> to learn more."
+        }
+      ]
+    }
+  ]
+}

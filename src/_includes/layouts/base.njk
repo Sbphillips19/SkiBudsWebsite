@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebSite">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title itemprop="name">{% if title %}{{ title }} — {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="canonical" href="{{ canonical or site.url + page.url }}" itemprop="url">
+  <link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url }}">
+  <meta name="theme-color" content="{{ site.themeColor }}">
+  {% if noindex %}<meta name="robots" content="noindex">{% else %}<meta name="robots" content="all,follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">{% endif %}
+
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://www.instagram.com" crossorigin>
+  <link rel="preconnect" href="https://www.facebook.com" crossorigin>
+  <link rel="preconnect" href="https://www.youtube.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.linkedin.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if title %}{{ title }} — {% endif %}{{ site.name }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ canonical or site.url + page.url }}">
+  <meta property="og:image" content="{{ site.url }}/images/WhistlerPeakView-og.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:alt" content="SkiBuds — Find your people on the mountain">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@skibudsapp">
+  <meta name="twitter:creator" content="@skibudsapp">
+  <meta property="twitter:image" content="{{ site.url }}/images/WhistlerPeakView-og.webp">
+  <meta property="twitter:image:alt" content="SkiBuds — Find your people on the mountain">
+  <meta property="twitter:image:width" content="1200">
+  <meta property="twitter:image:height" content="630">
+
+  <!-- Favicons & Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/icons/android-icon-512x512.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="{{ site.themeColor }}">
+
+  <!-- Feeds -->
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} Blog RSS" href="/feed.xml">
+  <link rel="alternate" type="application/json" title="{{ site.name }} Blog JSON" href="/feed.json">
+
+  <!-- Styles -->
+  <link rel="preload" href="/css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/custom.css"></noscript>
+
+  {% if preloadHero %}
+  <link rel="preload" as="image" href="/images/WhistlerPeakView.jpg" type="image/jpeg">
+  {% endif %}
+
+  <!-- Critical CSS (above-the-fold) -->
+  <style>
+    /* Critical CSS for above-the-fold content */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; } }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    :root { --ink: #0b1220; --blue: #0144ee; --lift: #3b82f6; --snow: #f7f9fc; --slate: #5a6478; --hold: #ffb020; --line: #dfe5ef; --bg: var(--snow); --surface: #ffffff; --text: var(--ink); --text-muted: var(--slate); --font-display: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; --font-body: var(--font-display); --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; --measure: 68ch; --radius: 14px; --shell: min(1120px, 100% - 2.5rem); }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --bg: #070c17; --surface: #0f1729; --text: #eaf0fb; --text-muted: #9aa7bf; --line: #1e2942; } }
+    :root[data-theme='dark'] { --bg: #070c17; --surface: #0f1729; --text: #eaf0fb; --text-muted: #9aa7bf; --line: #1e2942; }
+    a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    :where(a, button, input, summary):focus-visible { outline: 3px solid var(--lift); outline-offset: 3px; border-radius: 4px; }
+    h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; margin: 0 0 0.5em; letter-spacing: -0.03em; text-wrap: balance; }
+    h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 800; text-transform: uppercase; letter-spacing: -0.035em; }
+    .shell { width: var(--shell); margin-inline: auto; }
+    .band { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+    .eyebrow { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 0.75rem; }
+    .lede { font-size: clamp(1.0625rem, 1.9vw, 1.3125rem); color: var(--text-muted); max-width: 56ch; }
+    .nav { position: sticky; top: 0; z-index: 50; padding: 0.7rem 0; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav__inner { width: var(--shell); margin-inline: auto; display: flex; align-items: center; gap: 1.25rem; }
+    .nav__brand { display: flex; align-items: center; margin-right: auto; }
+    .nav__brand img { width: 132px; }
+    .nav__links { display: flex; align-items: center; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+    .nav__links a { font-size: 0.9375rem; font-weight: 600; color: var(--text); text-decoration: none; }
+    .nav__toggle { display: none; }
+    @media (max-width: 720px) { .nav__links { display: none; } .nav__menu--open .nav__links { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 1.5rem; gap: 1.25rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); } .nav__menu--open .nav__links a { font-size: 1.125rem; padding: 0.5rem 0; } .nav__menu--open .btn { width: 100%; justify-content: center; margin-top: 0.5rem; } .nav__toggle { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; padding: 0.5rem; background: transparent; border: 1px solid var(--line); border-radius: 8px; color: var(--text); cursor: pointer; } .nav__toggle:hover { border-color: var(--blue); color: var(--blue); } .nav__toggle-icon { width: 24px; height: 2px; background: currentColor; border-radius: 2px; position: relative; transition: background 0.2s ease; } .nav__toggle-icon::before, .nav__toggle-icon::after { content: ''; position: absolute; left: 0; width: 100%; height: 2px; background: currentColor; border-radius: 2px; transition: transform 0.2s ease; } .nav__toggle-icon::before { top: -7px; } .nav__toggle-icon::after { bottom: -7px; } .nav__toggle[aria-expanded="true"] .nav__toggle-icon { background: transparent; } .nav__toggle[aria-expanded="true"] .nav__toggle-icon::before { transform: translateY(7px) rotate(45deg); } .nav__toggle[aria-expanded="true"] .nav__toggle-icon::after { transform: translateY(-7px) rotate(-45deg); } .nav__toggle-text { font-size: 0.625rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; } }
+    @media (min-width: 721px) { .nav__toggle { display: none; } }
+      /* High contrast mode support */
+    @media (prefers-contrast: more) {
+      :root {
+        --blue: #0000ff;
+        --lift: #00ffff;
+        --hold: #ffff00;
+        --line: #000;
+        --text: #000;
+        --text-muted: #333;
+      }
+      :root[data-theme='dark'] {
+        --bg: #000;
+        --surface: #111;
+        --text: #fff;
+        --text-muted: #ccc;
+        --blue: #0ff;
+        --lift: #ff0;
+        --hold: #ff0;
+        --line: #fff;
+      }
+      a { text-decoration: underline; }
+      .btn { border: 2px solid currentColor; }
+      .card, .partner, .board, .legal__toc { border-width: 2px; }
+    }
+
+    /* Reduced motion - enhanced */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+      .dot { animation: none !important; }
+      .rise { animation: none !important; opacity: 1; transform: none; }
+    }
+
+    /* High contrast mode for Windows */
+    @media (forced-colors: active) {
+      :root {
+        --blue: CanvasText;
+        --lift: CanvasText;
+        --hold: CanvasText;
+        --line: CanvasText;
+        --text: CanvasText;
+        --text-muted: GrayText;
+        --bg: Canvas;
+        --surface: Canvas;
+      }
+      .btn { border: 2px solid currentColor; }
+      .card, .partner, .board, .legal__toc { border: 2px solid currentColor; }
+      .skip-link { background: CanvasText; color: Canvas; }
+      .dot { background: CanvasText; }
+      .waitlist { background: Canvas; border-color: CanvasText; color: CanvasText; }
+    }
+
+    /* Enhanced focus styles */
+    :where(a, button, input, summary, [href], [tabindex]):focus-visible {
+      outline: 3px solid var(--lift);
+      outline-offset: 3px;
+      border-radius: 4px;
+      box-shadow: 0 0 0 3px var(--surface);
+    }
+
+    /* Touch target minimum sizes */
+    @media (pointer: coarse) {
+      .btn, .nav__links a, .nav__toggle {
+        min-height: 48px;
+        min-width: 48px;
+      }
+      .nav__links a { padding: 0.75rem 1rem; }
+      .board__state { padding: 0.85rem 1.1rem; }
+    }
+
+    /* Skip links for major sections */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.75rem 1.5rem;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 0 0 var(--radius) var(--radius);
+      z-index: 1000;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus {
+      top: 0;
+      outline: 3px solid var(--lift);
+      outline-offset: 3px;
+    }
+
+    /* Multiple skip links */
+    .skip-links {
+      position: absolute;
+      top: -100%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 1000;
+    }
+
+    .skip-links:focus-within {
+      top: 0;
+    }
+
+    .skip-links a {
+      background: var(--blue);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s ease;
+    }
+
+    .skip-links a:hover,
+    .skip-links a:focus {
+      background: var(--lift);
+    }
+
+    /* Focus styles for form elements */
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--lift);
+      outline-offset: 3px;
+      border-radius: 4px;
+      border-color: var(--lift);
+    }
+
+    /* Live region styles: keep status regions visually hidden until content is announced */
+    [aria-live] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+  <script>
+    (function() {
+      try {
+        var theme = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (theme === 'dark' || (!theme && prefersDark)) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "{{ site.url }}/#organization",
+        "name": "{{ site.company }}",
+        "legalName": "{{ site.company }}",
+        "url": "{{ site.url }}/",
+        "email": "{{ site.email }}",
+        "logo": "{{ site.url }}/images/logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Whistler",
+          "addressRegion": "BC",
+          "addressCountry": "CA"
+        },
+        "sameAs": [
+          "{{ site.social.instagram }}",
+          "{{ site.social.facebook }}",
+          "{{ site.social.youtube }}",
+          "{{ site.social.linkedin }}"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "url": "{{ site.url }}/",
+        "name": "{{ site.name }}",
+        "description": "{{ site.description }}",
+        "publisher": {"@id": "{{ site.url }}/#organization"},
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "{{ site.url }}{{ page.url }}#page",
+        "url": "{{ site.url }}{{ page.url }}",
+        "name": "{% if title %}{{ title }} — {% endif %}{{ site.name }}",
+        "description": "{{ description or site.description }}",
+        "isPartOf": {"@id": "{{ site.url }}/#website"},
+        "primaryImageOfPage": "{{ site.url }}/images/WhistlerPeakView-og.webp",
+        "inLanguage": "en",
+        "breadcrumb": {"@id": "{{ site.url }}{{ page.url }}#breadcrumb"}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "{{ site.url }}{{ page.url }}#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ site.url }}/"
+          }{% if page.url != "/" and title %},
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ title }}",
+            "item": "{{ site.url }}{{ page.url }}"
+          }{% endif %}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body id="top">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  {% include "partials/nav.njk" %}
+  <main id="main-content" role="main">
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+
+  <!-- Analytics (consent-aware) -->
+  <script>
+    (function() {
+      // Exact cookie-token match (no prefix collisions)
+      function getConsent() {
+        var row = document.cookie.split('; ').find(function(r) { return r.indexOf('analytics_consent=') === 0; });
+        return row ? row.split('=')[1] : null;
+      }
+      // Load Plausible and expose the queue; safe to call repeatedly
+      window.loadPlausible = function() {
+        if (document.querySelector('script[src*="plausible.io"]')) return;
+        var script = document.createElement('script');
+        script.defer = true;
+        script.dataset.domain = 'skibudsapp.com';
+        script.src = 'https://plausible.io/js/script.js';
+        document.head.appendChild(script);
+        window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments); };
+      };
+      // Reusable funnel-event helper. No-op until Plausible is loaded (i.e. consent granted);
+      // every tracked interaction funnels through here so declined users generate zero calls.
+      window.trackEvent = function(name, props) {
+        if (typeof window.plausible === 'function') {
+          window.plausible(name, { props: props || {} });
+        }
+      };
+      if (getConsent() === 'true') {
+        window.loadPlausible();
+      }
+    })();
+  </script>
+
+  <!-- Cookie Consent Banner -->
+  <script>
+    (function() {
+      function getConsent() {
+        var row = document.cookie.split('; ').find(function(r) { return r.indexOf('analytics_consent=') === 0; });
+        return row ? row.split('=')[1] : null;
+      }
+      if (!getConsent()) {
+        var banner = document.createElement('div');
+        banner.id = 'cookie-consent';
+        banner.setAttribute('role', 'region');
+        banner.setAttribute('aria-label', 'Cookie consent');
+        banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--line);padding:1.5rem;z-index:1000;box-shadow:0 -4px 20px rgba(0,0,0,0.1);';
+        banner.innerHTML = `
+          <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;">
+            <p style="margin:0;flex:1;min-width:250px;">We value your privacy. We use analytics to improve your experience. <a href="/privacy" style="color:var(--blue);">Learn more</a>.</p>
+            <div style="display:flex;gap:0.75rem;">
+              <button id="accept-analytics" class="btn" style="font-size:0.875rem;">Accept</button>
+              <button id="decline-analytics" class="btn btn--quiet" style="font-size:0.875rem;">Decline</button>
+            </div>
+          </div>`;
+        document.body.appendChild(banner);
+
+        document.getElementById('accept-analytics').addEventListener('click', function() {
+          document.cookie = 'analytics_consent=true;path=/;max-age=31536000;SameSite=Lax;Secure';
+          banner.remove();
+          // Load analytics in place — no full page reload
+          if (window.loadPlausible) window.loadPlausible();
+        });
+
+        document.getElementById('decline-analytics').addEventListener('click', function() {
+          document.cookie = 'analytics_consent=false;path=/;max-age=31536000;SameSite=Lax;Secure';
+          banner.remove();
+        });
+      }
+    })();
+  </script>
+
+  <!-- Funnel event delegation (fires only when consent was granted and Plausible loaded) -->
+  <script>
+    (function() {
+      // Contact actions sitewide: mailto links, once per pageload
+      var contactSent = false;
+      document.addEventListener('click', function(e) {
+        if (contactSent) return;
+        var target = e.target;
+        var link = target && target.closest ? target.closest('a[href^="mailto:"]') : null;
+        if (link) {
+          contactSent = true;
+          if (window.trackEvent) window.trackEvent('Contact Click', { page: location.pathname });
+        }
+      }, true);
+
+      // Generic CTA hook: elements carrying data-track-cta fire 'App CTA Click' once per element.
+      // Tag app/download/launch CTAs with data-track-cta="<label>"; no store links exist pre-launch.
+      document.addEventListener('click', function(e) {
+        var target = e.target;
+        var el = target && target.closest ? target.closest('[data-track-cta]') : null;
+        if (!el || el.dataset.ctaTracked) return;
+        el.dataset.ctaTracked = '1';
+        if (window.trackEvent) window.trackEvent('App CTA Click', { cta_label: el.dataset.trackCta, page: location.pathname });
+      });
+    })();
+  </script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        try {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              // Check for updates periodically
+              setInterval(function() {
+                registration.update();
+              }, 60 * 60 * 1000); // Every hour
+            })
+            .catch(function(registrationError) {
+              console.warn('SW registration failed: ', registrationError);
+            });
+        } catch (e) {
+          console.warn('Service worker unavailable:', e);
+        }
+      });
+    }
+  </script>
+
+  <!-- PWA Install Prompt -->
+  <script>
+    (function() {
+      var deferredPrompt;
+      var installBanner = document.createElement('div');
+      installBanner.id = 'pwa-install-banner';
+      installBanner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--line);padding:1rem 1.5rem;z-index:999;display:none;box-shadow:0 -4px 20px rgba(0,0,0,0.1);';
+      installBanner.innerHTML = `
+        <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;">
+          <div style="flex:1;min-width:250px;">
+            <strong style="color:var(--text);">Install SkiBuds</strong>
+            <p style="margin:0.25rem 0 0;font-size:0.875rem;color:var(--text-muted);">Add to home screen for offline access & faster loads.</p>
+          </div>
+          <div style="display:flex;gap:0.75rem;">
+            <button id="pwa-install-btn" class="btn" style="font-size:0.875rem;">Install</button>
+            <button id="pwa-dismiss-btn" class="btn btn--quiet" style="font-size:0.875rem;">Later</button>
+          </div>`;
+        document.body.appendChild(installBanner);
+
+      window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        // Check if user previously dismissed
+        var dismissed = localStorage.getItem('pwa-install-dismissed');
+        if (!dismissed) {
+          // Show after 30 seconds
+          setTimeout(function() {
+            installBanner.style.display = 'block';
+          }, 30000);
+        }
+      });
+
+      document.getElementById('pwa-install-btn').addEventListener('click', function() {
+        installBanner.style.display = 'none';
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then(function(choiceResult) {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('PWA install accepted');
+              // Track install event
+              if (window.plausible) window.plausible('pwa_install');
+            }
+            deferredPrompt = null;
+          });
+        }
+      });
+
+      document.getElementById('pwa-dismiss-btn').addEventListener('click', function() {
+        installBanner.style.display = 'none';
+        localStorage.setItem('pwa-install-dismissed', 'true');
+      });
+
+      window.addEventListener('appinstalled', function() {
+        installBanner.style.display = 'none';
+        console.log('PWA installed');
+        if (window.plausible) window.plausible('pwa_installed');
+      });
+    })();
+  </script>
+
+  <!-- Sentry Error Tracking (consent-aware) -->
+  <script>
+    (function() {
+      var consent = document.cookie.split('; ').find(function(r) { return r.indexOf('analytics_consent=') === 0; });
+      if (consent && consent.split('=')[1] === 'true') {
+        // Initialize Sentry (replace with your DSN)
+        // Example:
+        // var script = document.createElement('script');
+        // script.src = 'https://browser.sentry-cdn.com/7.x.x/bundle.min.js';
+        // script.onload = function() {
+        //   Sentry.init({
+        //     dsn: 'YOUR_SENTRY_DSN',
+        //     environment: 'production',
+        //     tracesSampleRate: 0.1,
+        //     replaysOnErrorSampleRate: 1.0,
+        //     replaysSessionSampleRate: 0.1
+        //   });
+        // };
+        // document.head.appendChild(script);
+      }
+    })();
+  </script>
+
+  <!-- Web Vitals Reporting (valid metrics only, one payload per metric, consent-aware) -->
+  <script>
+    (function() {
+      function getConsent() {
+        var row = document.cookie.split('; ').find(function(r) { return r.indexOf('analytics_consent=') === 0; });
+        return row ? row.split('=')[1] : null;
+      }
+      if (getConsent() !== 'true' || !('PerformanceObserver' in window)) return;
+
+      var sent = {};
+      function send(metric, value, rating) {
+        if (sent[metric]) return;
+        sent[metric] = true;
+        if (typeof window.plausible === 'function') {
+          window.plausible('web_vital', {
+            props: { metric: metric, value: Math.round(value * 100) / 100, rating: rating }
+          });
+        }
+      }
+
+      var clsTotal = 0;
+      try {
+        // LCP: report the final candidate once
+        new PerformanceObserver(function(list) {
+          var entries = list.getEntries();
+          var last = entries[entries.length - 1];
+          if (last) {
+            var t = last.startTime;
+            send('LCP', t, t <= 2500 ? 'good' : t <= 4000 ? 'needs-improvement' : 'poor');
+          }
+        }).observe({ type: 'largest-contentful-paint', buffered: true });
+
+        // CLS: sum layout shifts not caused by recent input; flush once on page hide
+        new PerformanceObserver(function(list) {
+          list.getEntries().forEach(function(entry) {
+            if (!entry.hadRecentInput) clsTotal += entry.value;
+          });
+        }).observe({ type: 'layout-shift', buffered: true });
+
+        // Input latency from the first discrete interaction (processing delay)
+        new PerformanceObserver(function(list) {
+          var entry = list.getEntries()[0];
+          if (entry && typeof entry.processingStart === 'number') {
+            var d = entry.processingStart - entry.startTime;
+            send('INP-proxy', d, d <= 100 ? 'good' : d <= 300 ? 'needs-improvement' : 'poor');
+          }
+        }).observe({ type: 'first-input', buffered: true });
+
+        function flushCls() {
+          send('CLS', clsTotal, clsTotal <= 0.1 ? 'good' : clsTotal <= 0.25 ? 'needs-improvement' : 'poor');
+        }
+        document.addEventListener('visibilitychange', function() {
+          if (document.visibilityState === 'hidden') flushCls();
+        });
+        window.addEventListener('pagehide', flushCls);
+      } catch (e) {
+        console.warn('Web Vitals observation failed:', e);
+      }
+    })();
+  </script>
+
+  <!-- Subresource Integrity for External Scripts -->
+  <!-- Note: Plausible is loaded from plausible.io - add integrity when available -->
+  <!-- <script src="https://plausible.io/js/script.js" integrity="sha384-..." crossorigin="anonymous" defer></script> -->
+
+</body>
+
+</html>

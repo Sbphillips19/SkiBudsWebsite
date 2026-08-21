@@ -1,0 +1,59 @@
+---
+layout: base.njk
+title: FAQ
+description: Frequently asked questions about SkiBuds — the app for finding riding partners, tracking runs, and following mountain conditions.
+eleventyExcludeFromCollections: true
+---
+
+  <div class="shell legal">
+    <h1>Frequently Asked Questions</h1>
+    <p class="legal__meta"><time datetime="2026-08-20">Last Updated: August 20, 2026</time></p>
+
+    <nav class="legal__toc" aria-label="Table of contents">
+      <h2>Quick Links</h2>
+      <ul>
+        {% for section in faqs.sections %}
+        <li><a href="#{{ section.id }}">{{ section.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    {% for section in faqs.sections %}
+    <section id="{{ section.id }}">
+      <h2>{{ section.title }}</h2>
+
+      {% for item in section.items %}
+      <details>
+        <summary><h3>{{ item.q }}</h3></summary>
+        <p>{{ item.a | safe }}</p>
+      </details>
+      {% endfor %}
+    </section>
+    {% endfor %}
+
+    <hr>
+    <p><a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="/">Home</a></p>
+    <a href="#top" class="btn btn--quiet" style="margin-top: 2rem;">Back to top</a>
+  </div>
+
+<script type="application/ld+json">
+  {% set qjson = "" %}
+  {% set first = true %}
+  {% for section in faqs.sections %}{% for item in section.items %}{% if first %}{% set first = false %}{% else %}{% set qjson = qjson ~ "," %}{% endif %}{% set qjson = qjson ~ '
+      {
+        "@type": "Question",
+        "name": ' ~ (item.q | json | safe) ~ ',
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": ' ~ (item.a | json | safe) ~ '
+        }
+      }' %}{% endfor %}{% endfor %}
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "{{ site.url }}/faq#faqpage",
+    "url": "{{ site.url }}/faq/",
+    "mainEntity": [{{ qjson | safe }}
+    ]
+  }
+</script>

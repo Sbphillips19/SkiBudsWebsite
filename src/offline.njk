@@ -1,0 +1,30 @@
+---
+layout: base.njk
+title: Offline
+description: You're offline. Some features may not be available.
+eleventyExcludeFromCollections: true
+noindex: true
+permalink: offline.html
+---
+
+  <div class="shell offline-page">
+    <div class="offline-page__icon">📡</div>
+    <h1 class="offline-page__title">You're Offline</h1>
+    <p class="lede offline-page__description">
+      Looks like you've lost connection. Some features like the waitlist signup and social links may not work until you're back online.
+    </p>
+    <p class="offline-page__note">
+      Run tracking and cached content will still work. Your data will sync when you reconnect.
+    </p>
+    <div class="offline-page__actions">
+      <button onclick="window.location.reload()" class="btn">Try Again</button>
+      <a href="/" class="btn btn--quiet">Go Home</a>
+    </div>
+  </div>
+
+<script>
+  // Auto-retry when connection restores
+  window.addEventListener('online', () => {
+    window.location.reload();
+  });
+</script>

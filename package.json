@@ -1,0 +1,56 @@
+{
+  "name": "skibuds-website",
+  "version": "1.0.0",
+  "description": "Static marketing site for SkiBuds — Find your people on the mountain.",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "build:prod": "NODE_ENV=production eleventy && workbox generateSW workbox-config.js",
+    "build:sw": "workbox generateSW workbox-config.js",
+    "build:all": "npm run build && npm run build:sw",
+    "preview": "npx serve _site -p 8899",
+    "clean": "rm -rf _site",
+    "lint": "eslint . && stylelint \"**/*.css\" && prettier --check .",
+    "lint:fix": "eslint . --fix && stylelint \"**/*.css\" --fix && prettier --write .",
+    "lighthouse": "lighthouse-ci autorun --config=lighthouserc.json",
+    "lighthouse:ci": "lighthouse-ci autorun --config=lighthouserc.json --upload.target=temporary-public-storage",
+    "bundle:analyze": "npx bundle-buddy _site",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Sbphillips19/SkiBudsWebsite.git"
+  },
+  "keywords": [
+    "ski",
+    "snowboard",
+    "marketing",
+    "static-site",
+    "eleventy"
+  ],
+  "author": "PowWow, LLC",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-img": "^7.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "@eslint/js": "10.0.1",
+    "@types/node": "^22.0.0",
+    "critical": "8.0.0",
+    "eslint": "10.8.1",
+    "eslint-plugin-prettier": "5.5.6",
+    "html-minifier-terser": "^7.2.0",
+    "husky": "9.1.7",
+    "lighthouse-ci": "^1.13.1",
+    "lint-staged": "17.3.0",
+    "prettier": "3.9.6",
+    "stylelint": "16.26.1",
+    "stylelint-config-prettier": "9.0.5",
+    "stylelint-config-standard": "36.0.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0",
+    "typescript-eslint": "8.67.0",
+    "workbox-cli": "7.4.1"
+  }
+}

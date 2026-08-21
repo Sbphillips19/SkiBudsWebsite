@@ -1,13 +1,9 @@
-# Build output
+# Ignore build output and dependencies
 _site/
-
-# Dependencies
 node_modules/
-
-# Temp/minified artifacts
-*.css.tmp
 *.min.css
 *.min.js
+package-lock.json
 
 # IDE
 .vscode/
@@ -17,9 +13,9 @@ node_modules/
 
 # OS
 .DS_Store
-**/.DS_Store
 Thumbs.db
 
 # Logs
 *.log
 npm-debug.log*
+.ralph/

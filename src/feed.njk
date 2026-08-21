@@ -1,0 +1,30 @@
+---
+permalink: feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>{{ site.name }} Blog</title>
+    <link>{{ site.url }}/blog</link>
+    <description>{{ site.description }}</description>
+    <language>en</language>
+    <lastBuildDate>{{ collections.blog[0].date | rfc822Date }}</lastBuildDate>
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    {% for post in collections.blog %}
+    <item>
+      <title>{{ post.data.title }}</title>
+      <link>{{ site.url }}{{ post.url }}</link>
+      <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+      <description><![CDATA[{{ post.data.description }}]]></description>
+      <content:encoded><![CDATA[{{ post.templateContent | safe }}]]></content:encoded>
+      <pubDate>{{ post.date | rfc822Date }}</pubDate>
+      {% if post.data.tags %}
+        {% for tag in post.data.tags %}
+        <category>{{ tag }}</category>
+        {% endfor %}
+      {% endif %}
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

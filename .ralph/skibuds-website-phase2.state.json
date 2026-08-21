@@ -1,0 +1,19 @@
+{
+  "name": "skibuds-website-phase2",
+  "taskFile": ".ralph/skibuds-website-phase2.md",
+  "iteration": 16,
+  "maxIterations": 15,
+  "itemsPerIteration": 4,
+  "reflectEvery": 3,
+  "reflectInstructions": "Review progress, blockers, approach, and next priorities. Record the reflection in the task file before continuing.",
+  "endInstructions": "",
+  "active": false,
+  "status": "completed",
+  "startedAt": "2026-08-20T23:36:02.398Z",
+  "lastReflectionAt": 13,
+  "continuationQueued": false,
+  "ownerSessionId": "01a0207a-dbd3-7289-b660-44a8797e90e6",
+  "ownerSessionFile": "/Users/stephenphillips/.pi/agent/sessions/--Users-stephenphillips-Desktop-SB-SkiBudsWebsite--/2026-08-20T18-41-57-715Z_01a0207a-dbd3-7289-b660-44a8797e90e6.jsonl",
+  "ownerStartedAt": "2026-08-20T23:36:02.398Z",
+  "completedAt": "2026-08-21T00:46:08.050Z"
+}

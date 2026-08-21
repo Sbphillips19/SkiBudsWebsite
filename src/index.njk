@@ -1,0 +1,243 @@
+---
+layout: base.njk
+title: Find Your People on the Mountain
+description: SkiBuds helps skiers and snowboarders find riding partners, track their runs, and follow mountain conditions. Coming soon to iOS and Android.
+eleventyExcludeFromCollections: true
+preloadHero: true
+---
+
+<!-- Hero -->
+<section class="hero">
+  <div class="shell">
+    {% image "logo.png", "SkiBuds logo", "108px", "hero__logo rise", "eager", "high" %}
+    <h1 class="rise rise--2">Find your people on the mountain</h1>
+    <p class="lede rise rise--3">
+      Ride together, track your day, and know what the snow is doing before you commit to a line.
+    </p>
+
+    <!-- Launch status board -->
+    <div class="board rise rise--3" id="status">
+      <div class="board__head">
+        <span>SkiBuds &middot; Launch status</span>
+        <span>{{ site.app.launchYear }}</span>
+      </div>
+      <div class="board__row">
+        <span class="board__label">iOS</span>
+        <span class="board__state"><span class="dot" aria-hidden="true"></span>{{ site.app.iosStatus }}</span>
+      </div>
+      <div class="board__row">
+        <span class="board__label">Android</span>
+        <span class="board__state"><span class="dot" aria-hidden="true"></span>{{ site.app.androidStatus }}</span>
+      </div>
+      <div class="board__row">
+        <span class="board__label">Updates</span>
+        <a class="board__state" href="{{ site.social.instagram }}" target="_blank" rel="noopener" data-track-cta="instagram-launch-updates">@skibudsapp &rarr;</a>
+      </div>
+    </div>
+
+    <p class="lede rise rise--3" style="margin-top:1.5rem;font-size:1rem;">
+      The app isn't in the stores while we rebuild it. Follow along for the launch.
+    </p>
+
+    <!-- Waitlist counter -->
+    <div class="waitlist rise rise--3" style="margin-top: 2rem; padding: 1.5rem; background: rgba(11, 18, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.16); border-radius: var(--radius); backdrop-filter: blur(6px); max-width: 30rem;" aria-live="polite" aria-atomic="true">
+      <p style="margin: 0; font-family: var(--font-mono); font-size: clamp(1.5rem, 4vw, 3rem); font-weight: 700; color: var(--hold);">{{ site.waitlist.count | comma }}</p>
+      <p style="margin: 0.5rem 0 0; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.7);">riders on the waitlist</p>
+    </div>
+
+    <!-- Waitlist signup form -->
+    <form class="waitlist-form rise rise--3" action="https://api.buttondown.email/v1/subscribers" method="POST" style="margin-top: 1.5rem; max-width: 30rem;" novalidate>
+      <input type="hidden" name="tags" value="ski-buds-waitlist">
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <label for="email-input" class="visually-hidden">Email address</label>
+        <input type="email" id="email-input" name="email" placeholder="your@email.com" required autocomplete="email" aria-describedby="email-hint" style="flex: 1; min-width: 200px; padding: 0.875rem 1.25rem; border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius); background: rgba(11, 18, 32, 0.6); color: #fff; font-family: var(--font-body); font-size: 1rem;">
+        <span id="email-hint" class="visually-hidden">Enter your email address to join the waitlist</span>
+        <button type="submit" class="btn" style="white-space: nowrap;">Join waitlist</button>
+      </div>
+      <p class="form-status" style="margin-top: 0.75rem; font-size: 0.875rem; min-height: 1.25rem;" aria-live="polite"></p>
+    </form>
+    <script>
+      (function() {
+        var form = document.querySelector('.waitlist-form');
+        var emailInput = document.getElementById('email-input');
+        var status = document.querySelector('.form-status');
+        if (!form) return;
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var email = emailInput.value.trim();
+          if (!email || !email.includes('@')) {
+            status.textContent = 'Please enter a valid email.';
+            status.style.color = 'var(--hold)';
+            return;
+          }
+          var submitBtn = form.querySelector('button[type="submit"]');
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Joining...';
+          status.textContent = '';
+          if (window.trackEvent) window.trackEvent('Waitlist Intent', { page: '/' });
+          try {
+            var response = await fetch(form.action, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email: email, tags: ['ski-buds-waitlist'] })
+            });
+            if (response.ok) {
+              status.textContent = 'You\'re on the list! 🎿';
+              status.style.color = 'var(--hold)';
+              emailInput.value = '';
+              if (window.trackEvent) window.trackEvent('Waitlist Signup', { page: '/' });
+            } else {
+              var err = await response.json().catch(function() { return {}; });
+              status.textContent = err.error || 'Something went wrong. Try again.';
+              status.style.color = 'var(--hold)';
+              if (window.trackEvent) window.trackEvent('Waitlist Error', { stage: 'api_' + response.status, page: '/' });
+            }
+          } catch (err) {
+            status.textContent = 'Network error. Please try again.';
+            status.style.color = 'var(--hold)';
+            if (window.trackEvent) window.trackEvent('Waitlist Error', { stage: 'network', page: '/' });
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Join waitlist';
+          }
+        });
+      })();
+    </script>
+
+    <ul class="social">
+      <li><a href="{{ site.social.instagram }}" target="_blank" rel="noopener" aria-label="{{ site.name }} on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
+        </svg></a></li>
+      <li><a href="{{ site.social.facebook }}" target="_blank" rel="noopener" aria-label="{{ site.name }} on Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5h1.65V4.6A22 22 0 0 0 14.3 4.5c-2.4 0-4 1.45-4 4.1v2.3H7.6V14h2.7v8Z" />
+        </svg></a></li>
+      <li><a href="{{ site.social.youtube }}" target="_blank" rel="noopener" aria-label="{{ site.name }} on YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M21.6 7.2a2.5 2.5 0 0 0-1.75-1.77C18.25 5 12 5 12 5s-6.25 0-7.85.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.75 1.77C5.75 19 12 19 12 19s6.25 0 7.85-.43a2.5 2.5 0 0 0 1.75-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15.1V8.9l5.2 3.1Z" />
+        </svg></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- What it does -->
+<section class="band" id="about">
+  <div class="shell">
+    <p class="eyebrow">What it does</p>
+    <h2>Built for the day, not the desk</h2>
+    <p class="lede">
+      SkiBuds started on the chairlifts in Whistler, from conversations about what riders
+      actually wanted on the mountain. It's being rebuilt around the same idea.
+    </p>
+
+    <div class="grid">
+      <article class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+        <h3>Ride with people at your level</h3>
+        <p>Find riders who ski the same mountains, at the same ability, looking for the same kind of day.</p>
+      </article>
+
+      <article class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8Z" />
+        </svg>
+        <h3>Keep your group together</h3>
+        <p>Message your crew, share photos from the day, and use opt-in location sharing to regroup.</p>
+      </article>
+
+      <article class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 20 10 5l4 8 2-3 5 10Z" />
+          <circle cx="12" cy="3.6" r="1.6" />
+        </svg>
+        <h3>Track your runs</h3>
+        <p>Record each run with GPS. Runs are separated from lift rides, so your vertical reflects what you actually skied.</p>
+      </article>
+
+      <article class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6.5 6.5 0 0 0-12.6 1.8A3.6 3.6 0 0 0 6 19Z" />
+          <path d="M8 22.5l1-2M12 22.5l1-2M16 22.5l1-2" />
+        </svg>
+        <h3>Know the snow</h3>
+        <p>Forecasts and mountain observations in one place, so you can plan around the weather instead of guessing.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Ability levels -->
+<section class="band band--tint" id="levels">
+  <div class="shell">
+    <p class="eyebrow">Ride at your level</p>
+    <h2>Matched the way the mountain is marked</h2>
+    <p class="lede">
+      You pick where you ride. SkiBuds matches you with people who ride there too &mdash; so nobody
+      is waiting at the bottom, and nobody is in over their head.
+    </p>
+
+    <div class="levels">
+      <div class="level">
+        <span class="level__mark mark-green" aria-hidden="true">&#9679;</span>
+        <span class="level__name">Green</span>
+        <span class="level__note">Learning the mountain. Groomers, easy terrain, no pressure.</span>
+      </div>
+      <div class="level">
+        <span class="level__mark mark-blue" aria-hidden="true">&#9632;</span>
+        <span class="level__name">Blue</span>
+        <span class="level__note">Comfortable most places. Happy to lap groomers all day.</span>
+      </div>
+      <div class="level">
+        <span class="level__mark mark-black" aria-hidden="true">&#9670;</span>
+        <span class="level__name">Black</span>
+        <span class="level__note">Steeps, bumps, and trees. Looking for people who keep up.</span>
+      </div>
+      <div class="level">
+        <span class="level__mark mark-black" aria-hidden="true">&#9670;&#9670;</span>
+        <span class="level__name">Backcountry</span>
+        <span class="level__note">Out of bounds and earning turns. Ride with a partner, always.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partners -->
+<section class="band">
+  <div class="shell">
+    <p class="eyebrow">Partners</p>
+    <h2>Good people we ride with</h2>
+    <p class="lede">
+      SkiBuds works with shops, clubs, and trip organizers across North America.
+    </p>
+    <p style="margin-top:1.5rem;">
+      <a href="/affiliates" class="btn btn--quiet">See all partners &rarr;</a>
+    </p>
+  </div>
+</section>
+<!-- Resort/section interaction tracking (once per section per pageload, consent-aware) -->
+<script>
+  (function() {
+    var sections = document.querySelectorAll('#status, #about, #levels');
+    if (!sections.length || !('IntersectionObserver' in window)) return;
+    var seen = Object.create(null);
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var id = entry.target.id;
+        if (seen[id]) return;
+        seen[id] = true;
+        observer.unobserve(entry.target);
+        if (window.trackEvent) window.trackEvent('Resort Section View', { section_id: id, page: '/' });
+      });
+    }, { threshold: 0.5 });
+    sections.forEach(function(section) { observer.observe(section); });
+  })();
+</script>

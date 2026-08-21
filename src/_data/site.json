@@ -1,0 +1,55 @@
+{
+  "name": "SkiBuds",
+  "shortName": "SkiBuds",
+  "description": "Find your people on the mountain. A community app for skiers and snowboarders to find riding partners, track runs, and follow mountain conditions.",
+  "url": "https://skibudsapp.com",
+  "email": "PowWowLLC1@gmail.com",
+  "company": "PowWow, LLC",
+  "location": "Whistler, BC",
+  "year": 2026,
+  "themeColor": "#0144ee",
+  "social": {
+    "instagram": "https://www.instagram.com/skibudsapp/",
+    "facebook": "https://www.facebook.com/SkiBuds-366071947329933/",
+    "youtube": "https://www.youtube.com/channel/UC1XZ1Vhgs-0lSJJjroAATlg",
+    "linkedin": "https://www.linkedin.com/in/stephen-b-phillips/"
+  },
+  "app": {
+    "iosStatus": "Coming soon",
+    "androidStatus": "Coming soon",
+    "launchYear": "2026"
+  },
+  "partners": [
+    {
+      "name": "RiPaTrip",
+      "url": "https://ripatrip.com/",
+      "logo": "ripatrip_logo_green.png",
+      "description": "ripatrip.com",
+      "category": "trip-organizer"
+    },
+    {
+      "name": "SnowPals",
+      "url": "http://snowpals.org/",
+      "logo": "snowpals.png",
+      "description": "For Lake Tahoe ski trips, join SnowPals.org — a San Francisco Bay Area snow-sports club for busy professionals, since 1999.",
+      "category": "club"
+    },
+    {
+      "name": "BAIST Apparel",
+      "url": "https://baistapparel.com/",
+      "logo": "baist.png",
+      "description": "baistapparel.com",
+      "category": "shop"
+    },
+    {
+      "name": "Denver Climbing Company",
+      "url": "https://www.denverclimbingcompany.com",
+      "logo": "DenverClimbing.png",
+      "description": "denverclimbingcompany.com",
+      "category": "shop"
+    }
+  ],
+  "waitlist": {
+    "count": 1247
+  }
+}

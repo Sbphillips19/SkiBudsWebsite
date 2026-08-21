@@ -1,0 +1,85 @@
+---
+layout: base.njk
+title: Partners
+description: Shops, clubs, and trip organizers SkiBuds works with across North America.
+eleventyExcludeFromCollections: true
+---
+
+<section class="band">
+  <div class="shell">
+    <p class="eyebrow">Partners</p>
+    <h1>Good people we ride with</h1>
+    <p class="lede">
+      Shops, clubs, and trip organizers we work with across North America. Want to be
+      listed? <a href="mailto:{{ site.email }}">Get in touch</a>.
+    </p>
+
+    <!-- Category filter -->
+    <div class="partner-filters" style="margin-bottom: 2rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+      <button class="btn partner-filter-btn partner-filter-btn--active" data-filter="all" aria-pressed="true">All</button>
+      <button class="btn btn--quiet partner-filter-btn" data-filter="shop" aria-pressed="false">Shops</button>
+      <button class="btn btn--quiet partner-filter-btn" data-filter="club" aria-pressed="false">Clubs</button>
+      <button class="btn btn--quiet partner-filter-btn" data-filter="trip-organizer" aria-pressed="false">Trip Organizers</button>
+    </div>
+
+    <div class="partners">
+      {% for partner in site.partners %}
+      <article class="partner" data-category="{{ partner.category }}">
+        <a href="{{ partner.url }}" target="_blank" rel="noopener">
+          {% image partner.logo, partner.name, "auto", "", "lazy" %}
+        </a>
+        <h3>{{ partner.name }}</h3>
+        <p>{{ partner.description | safe }}</p>
+        <span class="partner-category" style="display: inline-block; margin-top: 0.5rem; font-size: 0.75rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);">{{ partner.category | capitalize }}</span>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    var buttons = document.querySelectorAll('.partner-filter-btn');
+    var cards = document.querySelectorAll('.partner');
+
+    buttons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = this.dataset.filter;
+
+        // Update button states
+        buttons.forEach(function(b) {
+          b.classList.toggle('partner-filter-btn--active', b === btn);
+          b.classList.toggle('btn', b === btn);
+          b.classList.toggle('btn--quiet', b !== btn);
+          b.setAttribute('aria-pressed', b === btn);
+        });
+
+        // Filter cards
+        cards.forEach(function(card) {
+          var category = card.dataset.category;
+          if (filter === 'all' || category === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  })();
+</script>
+
+<!-- Partner outbound tracking: delegated listener, once per link per pageload, no preventDefault -->
+<script>
+  (function() {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      var link = target && target.closest ? target.closest('.partner a[target="_blank"]') : null;
+      if (!link || link.dataset.outboundTracked) return;
+      link.dataset.outboundTracked = '1';
+      var card = link.closest('.partner');
+      var heading = card ? card.querySelector('h3') : null;
+      var name = heading ? heading.textContent.trim() : '';
+      if (window.trackEvent) window.trackEvent('Partner Outbound', { partner_name: name, page: '/affiliates' });
+    });
+  })();
+</script>
