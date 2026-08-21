@@ -329,12 +329,13 @@ p {
   color: #fff;
   overflow: hidden;
 }
-.hero::before {
-  content: '';
+.hero__bg {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background: url('../images/WhistlerPeakView.jpg') center / cover no-repeat;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Deep blue wash keeps the photo legible under white type without
@@ -1000,6 +1001,9 @@ main:only-of-type .shell {
   margin-top: 0.75rem;
   font-size: 0.875rem;
   min-height: 1.25rem;
+  /* Status text renders over the hero photo panel; must hold >=4.5:1
+     against the brightest snow region bleeding through the overlay. */
+  color: #fff;
 }
 .waitlist-form input[type='email'] {
   flex: 1;

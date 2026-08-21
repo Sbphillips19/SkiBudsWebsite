@@ -8,6 +8,7 @@ preloadHero: true
 
 <!-- Hero -->
 <section class="hero">
+  {% image "/images/WhistlerPeakView.jpg", "Skiers on Whistler mountain", "100vw", "hero__bg", "eager", "high", [640, 1080, 1920] %}
   <div class="shell">
     {% image "logo.png", "SkiBuds logo", "108px", "hero__logo rise", "eager", "high" %}
     <h1 class="rise rise--2">Find your people on the mountain</h1>
@@ -46,7 +47,7 @@ preloadHero: true
     </div>
 
     <!-- Waitlist signup form -->
-    <form class="waitlist-form rise rise--3" action="https://api.buttondown.email/v1/subscribers" method="POST" style="margin-top: 1.5rem; max-width: 30rem;" novalidate>
+    <form id="waitlist" class="waitlist-form rise rise--3" action="https://api.buttondown.email/v1/subscribers" method="POST" style="margin-top: 1.5rem; max-width: 30rem;" novalidate>
       <input type="hidden" name="tags" value="ski-buds-waitlist">
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
         <label for="email-input" class="visually-hidden">Email address</label>
@@ -67,7 +68,7 @@ preloadHero: true
           var email = emailInput.value.trim();
           if (!email || !email.includes('@')) {
             status.textContent = 'Please enter a valid email.';
-            status.style.color = 'var(--hold)';
+            status.style.color = '#fff';
             return;
           }
           var submitBtn = form.querySelector('button[type="submit"]');
@@ -83,18 +84,18 @@ preloadHero: true
             });
             if (response.ok) {
               status.textContent = 'You\'re on the list! 🎿';
-              status.style.color = 'var(--hold)';
+              status.style.color = '#fff';
               emailInput.value = '';
               if (window.trackEvent) window.trackEvent('Waitlist Signup', { page: '/' });
             } else {
               var err = await response.json().catch(function() { return {}; });
               status.textContent = err.error || 'Something went wrong. Try again.';
-              status.style.color = 'var(--hold)';
+              status.style.color = '#fff';
               if (window.trackEvent) window.trackEvent('Waitlist Error', { stage: 'api_' + response.status, page: '/' });
             }
           } catch (err) {
             status.textContent = 'Network error. Please try again.';
-            status.style.color = 'var(--hold)';
+            status.style.color = '#fff';
             if (window.trackEvent) window.trackEvent('Waitlist Error', { stage: 'network', page: '/' });
           } finally {
             submitBtn.disabled = false;

@@ -16,6 +16,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/images': 'images' });
   eleventyConfig.addPassthroughCopy({ 'src/icons': 'icons' });
   eleventyConfig.addPassthroughCopy({ 'src/css': 'css' });
+  eleventyConfig.addPassthroughCopy({ 'src/js': 'js' });
   eleventyConfig.addPassthroughCopy({ 'src/manifest.json': 'manifest.json' });
   eleventyConfig.addPassthroughCopy({ 'src/robots.txt': 'robots.txt' });
   eleventyConfig.addPassthroughCopy({ 'src/CNAME': 'CNAME' });
@@ -34,7 +35,8 @@ module.exports = function (eleventyConfig) {
     sizes = '100vw',
     className = '',
     loading = 'lazy',
-    fetchpriority = 'auto'
+    fetchpriority = 'auto',
+    widths = [320, 640, 960, 1280, 1920, 2560]
   ) {
     // Resolve image path relative to src directory
     let imagePath;
@@ -47,7 +49,7 @@ module.exports = function (eleventyConfig) {
     }
 
     const metadata = await eleventyImage.default(imagePath, {
-      widths: [320, 640, 960, 1280, 1920, 2560],
+      widths,
       formats: ['avif', 'webp', 'jpeg'],
       outputDir: './_site/images/optimized/',
       urlPath: '/images/optimized/',
