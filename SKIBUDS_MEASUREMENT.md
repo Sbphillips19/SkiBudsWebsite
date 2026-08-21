@@ -3,7 +3,7 @@
 Analytics is Plausible (privacy-friendly, no cookies set by the provider), loaded from
 `plausible.io/js/script.js` **only after** explicit consent (`analytics_consent=true`
 cookie). All site events funnel through the `window.trackEvent(name, props)` helper
-(defined in `src/_includes/layouts/base.njk`), which no-ops when Plausible has not been
+(defined in `src/js/consent-core.js`), which no-ops when Plausible has not been
 loaded (consent declined or not yet granted) and forwards to `window.plausible` with
 event properties as `props`.
 
@@ -17,14 +17,14 @@ event properties as `props`.
 
 | Event                | Trigger                                              | Properties                          | Defined in |
 | -------------------- | ---------------------------------------------------- | ----------------------------------- | ---------- |
-| `Waitlist Intent`    | Waitlist form submit attempt (homepage)              | `page`                              | `src/index.njk` |
-| `Waitlist Signup`    | Waitlist POST returns ok                             | `page`                              | `src/index.njk` |
-| `Waitlist Error`     | Waitlist POST fails (`stage: api_<status>` or `network`) | `stage`, `page`                 | `src/index.njk` |
-| `App CTA Click`      | Any element with `data-track-cta="<label>"` clicked, once per element per pageview | `cta_label`, `page` | `src/_includes/layouts/base.njk` |
-| `Contact Click`      | Any `mailto:` link clicked                           | `page`                              | `src/_includes/layouts/base.njk` |
-| `Partner Outbound`   | Partner card link clicked on partners page           | `partner_name`, `page`              | `src/affiliates.njk` |
-| `Resort Section View`| Resort section scrolled into view on homepage        | `section_id`, `page`                | `src/index.njk` |
-| `Content Engaged`    | Blog article scrolled to 50% visibility              | `page`                              | `src/_includes/layouts/blog-post.njk` |
+| `Waitlist Intent`    | Waitlist form submit attempt (homepage)              | `page`                              | `src/js/waitlist-form.js` |
+| `Waitlist Signup`    | Waitlist POST returns ok                             | `page`                              | `src/js/waitlist-form.js` |
+| `Waitlist Error`     | Waitlist POST fails (`stage: api_<status>` or `network`) | `stage`, `page`                 | `src/js/waitlist-form.js` |
+| `App CTA Click`      | Any element with `data-track-cta="<label>"` clicked, once per element per pageview | `cta_label`, `page` | `src/js/cta-tracking.js` |
+| `Contact Click`      | Any `mailto:` link clicked                           | `page`                              | `src/js/cta-tracking.js` |
+| `Partner Outbound`   | Partner card link clicked on partners page           | `partner_name`, `page`              | `src/js/partner-outbound.js` |
+| `Resort Section View`| Resort section scrolled into view on homepage        | `section_id`, `page`                | `src/js/resort-sections.js` |
+| `Content Engaged`    | Blog article scrolled to 50% visibility              | `page`                              | `src/js/content-engaged.js` |
 
 Plausible built-ins (not via `trackEvent`):
 

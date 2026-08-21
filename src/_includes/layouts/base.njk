@@ -316,12 +316,21 @@
   {% include "partials/footer.njk" %}
 
   <!-- Site scripts (deferred, execution order = dependency order; consent-core first) -->
-  <script defer src="/js/consent-core.js"></script>
-  <script defer src="/js/consent-banner.js"></script>
-  <script defer src="/js/cta-tracking.js"></script>
-  <script defer src="/js/sw-registration.js"></script>
-  <script defer src="/js/pwa-install.js"></script>
-  <script defer src="/js/web-vitals.js"></script>
+  {%- set sitewideScripts = [
+    'consent-core.js',
+    'consent-banner.js',
+    'cta-tracking.js',
+    'sw-registration.js',
+    'pwa-install.js',
+    'web-vitals.js',
+    'nav-menu.js'
+  ] -%}
+  {%- for s in sitewideScripts -%}
+  <script defer src="/js/{{ s }}"></script>
+  {%- endfor -%}
+  {%- for s in pageScripts or [] -%}
+  <script defer src="/js/{{ s }}"></script>
+  {%- endfor -%}
 
   <!-- Subresource Integrity for External Scripts -->
   <!-- Note: Plausible is loaded from plausible.io - add integrity when available -->

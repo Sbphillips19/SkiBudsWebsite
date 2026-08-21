@@ -5,6 +5,8 @@ description: You're offline. Some features may not be available.
 eleventyExcludeFromCollections: true
 noindex: true
 permalink: offline.html
+pageScripts:
+  - offline-reload.js
 ---
 
   <div class="shell offline-page">
@@ -22,9 +24,4 @@ permalink: offline.html
     </div>
   </div>
 
-<script>
-  // Auto-retry when connection restores
-  window.addEventListener('online', () => {
-    window.location.reload();
-  });
-</script>
+

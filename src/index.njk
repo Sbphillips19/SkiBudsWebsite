@@ -4,6 +4,9 @@ title: Find Your People on the Mountain
 description: SkiBuds helps skiers and snowboarders find riding partners, track their runs, and follow mountain conditions. Coming soon to iOS and Android.
 eleventyExcludeFromCollections: true
 preloadHero: true
+pageScripts:
+  - waitlist-form.js
+  - resort-sections.js
 ---
 
 <!-- Hero -->
@@ -57,53 +60,7 @@ preloadHero: true
       </div>
       <p class="form-status" style="margin-top: 0.75rem; font-size: 0.875rem; min-height: 1.25rem;" aria-live="polite"></p>
     </form>
-    <script>
-      (function() {
-        var form = document.querySelector('.waitlist-form');
-        var emailInput = document.getElementById('email-input');
-        var status = document.querySelector('.form-status');
-        if (!form) return;
-        form.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          var email = emailInput.value.trim();
-          if (!email || !email.includes('@')) {
-            status.textContent = 'Please enter a valid email.';
-            status.style.color = '#fff';
-            return;
-          }
-          var submitBtn = form.querySelector('button[type="submit"]');
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Joining...';
-          status.textContent = '';
-          if (window.trackEvent) window.trackEvent('Waitlist Intent', { page: '/' });
-          try {
-            var response = await fetch(form.action, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ email: email, tags: ['ski-buds-waitlist'] })
-            });
-            if (response.ok) {
-              status.textContent = 'You\'re on the list! 🎿';
-              status.style.color = '#fff';
-              emailInput.value = '';
-              if (window.trackEvent) window.trackEvent('Waitlist Signup', { page: '/' });
-            } else {
-              var err = await response.json().catch(function() { return {}; });
-              status.textContent = err.error || 'Something went wrong. Try again.';
-              status.style.color = '#fff';
-              if (window.trackEvent) window.trackEvent('Waitlist Error', { stage: 'api_' + response.status, page: '/' });
-            }
-          } catch (err) {
-            status.textContent = 'Network error. Please try again.';
-            status.style.color = '#fff';
-            if (window.trackEvent) window.trackEvent('Waitlist Error', { stage: 'network', page: '/' });
-          } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Join waitlist';
-          }
-        });
-      })();
-    </script>
+    
 
     <ul class="social">
       <li><a href="{{ site.social.instagram }}" target="_blank" rel="noopener" aria-label="{{ site.name }} on Instagram">
@@ -223,22 +180,4 @@ preloadHero: true
     </p>
   </div>
 </section>
-<!-- Resort/section interaction tracking (once per section per pageload, consent-aware) -->
-<script>
-  (function() {
-    var sections = document.querySelectorAll('#status, #about, #levels');
-    if (!sections.length || !('IntersectionObserver' in window)) return;
-    var seen = Object.create(null);
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (!entry.isIntersecting) return;
-        var id = entry.target.id;
-        if (seen[id]) return;
-        seen[id] = true;
-        observer.unobserve(entry.target);
-        if (window.trackEvent) window.trackEvent('Resort Section View', { section_id: id, page: '/' });
-      });
-    }, { threshold: 0.5 });
-    sections.forEach(function(section) { observer.observe(section); });
-  })();
-</script>
+

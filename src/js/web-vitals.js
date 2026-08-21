@@ -20,15 +20,13 @@
   }
 
   var clsTotal = 0;
+  var lcpValue = null;
   try {
-    // LCP: report the final candidate once
+    // LCP: buffer the latest candidate; report once when the page is hidden
     new PerformanceObserver(function (list) {
       var entries = list.getEntries();
       var last = entries[entries.length - 1];
-      if (last) {
-        var t = last.startTime;
-        send('LCP', t, t <= 2500 ? 'good' : t <= 4000 ? 'needs-improvement' : 'poor');
-      }
+      if (last) lcpValue = last.startTime;
     }).observe({ type: 'largest-contentful-paint', buffered: true });
 
     // CLS: sum layout shifts not caused by recent input; flush once on page hide
@@ -54,10 +52,22 @@
         clsTotal <= 0.1 ? 'good' : clsTotal <= 0.25 ? 'needs-improvement' : 'poor'
       );
     }
+    function flushLcp() {
+      if (lcpValue == null) return;
+      var t = lcpValue;
+      lcpValue = null;
+      send('LCP', t, t <= 2500 ? 'good' : t <= 4000 ? 'needs-improvement' : 'poor');
+    }
     document.addEventListener('visibilitychange', function () {
-      if (document.visibilityState === 'hidden') flushCls();
+      if (document.visibilityState === 'hidden') {
+        flushLcp();
+        flushCls();
+      }
     });
-    window.addEventListener('pagehide', flushCls);
+    window.addEventListener('pagehide', function () {
+      flushLcp();
+      flushCls();
+    });
   } catch (e) {
     console.warn('Web Vitals observation failed:', e);
   }

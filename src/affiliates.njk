@@ -3,6 +3,9 @@ layout: base.njk
 title: Partners
 description: Shops, clubs, and trip organizers SkiBuds works with across North America.
 eleventyExcludeFromCollections: true
+pageScripts:
+  - partner-filter.js
+  - partner-outbound.js
 ---
 
 <section class="band">
@@ -37,49 +40,6 @@ eleventyExcludeFromCollections: true
   </div>
 </section>
 
-<script>
-  (function() {
-    var buttons = document.querySelectorAll('.partner-filter-btn');
-    var cards = document.querySelectorAll('.partner');
 
-    buttons.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var filter = this.dataset.filter;
-
-        // Update button states
-        buttons.forEach(function(b) {
-          b.classList.toggle('partner-filter-btn--active', b === btn);
-          b.classList.toggle('btn', b === btn);
-          b.classList.toggle('btn--quiet', b !== btn);
-          b.setAttribute('aria-pressed', b === btn);
-        });
-
-        // Filter cards
-        cards.forEach(function(card) {
-          var category = card.dataset.category;
-          if (filter === 'all' || category === filter) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-  })();
-</script>
 
 <!-- Partner outbound tracking: delegated listener, once per link per pageload, no preventDefault -->
-<script>
-  (function() {
-    document.addEventListener('click', function(e) {
-      var target = e.target;
-      var link = target && target.closest ? target.closest('.partner a[target="_blank"]') : null;
-      if (!link || link.dataset.outboundTracked) return;
-      link.dataset.outboundTracked = '1';
-      var card = link.closest('.partner');
-      var heading = card ? card.querySelector('h3') : null;
-      var name = heading ? heading.textContent.trim() : '';
-      if (window.trackEvent) window.trackEvent('Partner Outbound', { partner_name: name, page: '/affiliates' });
-    });
-  })();
-</script>
