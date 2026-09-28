@@ -4,6 +4,22 @@ pageScripts:
   - content-engaged.js
 ---
 
+{% set ogType = 'article' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | json | safe }},
+  "description": {{ (description or site.description) | json | safe }},
+  "datePublished": "{{ page.date.toISOString() }}",
+  "dateModified": "{{ page.date.toISOString() }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
+  "author": { "@type": "Organization", "name": {{ site.company | json | safe }}, "url": "{{ site.url }}" },
+  "publisher": { "@type": "Organization", "name": {{ site.company | json | safe }}, "url": "{{ site.url }}" }
+}
+</script>
+
 <article class="blog-post">
   <header class="blog-post__header">
     <p class="blog-post__meta">

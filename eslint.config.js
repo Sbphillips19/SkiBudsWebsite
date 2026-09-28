@@ -18,6 +18,8 @@ module.exports = [
         navigator: 'readonly',
         location: 'readonly',
         caches: 'readonly',
+        fetch: 'readonly',
+        IntersectionObserver: 'readonly',
         URL: 'readonly',
         es2022: 'readonly',
         require: 'readonly',

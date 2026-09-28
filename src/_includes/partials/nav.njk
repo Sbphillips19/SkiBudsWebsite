@@ -7,7 +7,7 @@
     <nav aria-label="Primary navigation" class="nav__menu" id="nav-menu" role="navigation">
       <ul class="nav__links">
         <li><a href="/#about" {% if page.url == '/' %}aria-current="page"{% endif %}>What it does</a></li>
-        <li><a href="/#levels">Levels</a></li>
+        <li><a href="/weather/" {% if page.url == '/weather' or page.url == '/weather/' %}aria-current="page"{% endif %}>Weather &amp; snow</a></li>
         <li><a href="/affiliates" {% if page.url == '/affiliates' or page.url == '/affiliates/' %}aria-current="page"{% endif %}>Partners</a></li>
         <li><a href="/blog" {% if page.url == '/blog' or page.url == '/blog/' %}aria-current="page"{% endif %}>Updates</a></li>
         <li><a href="/faq" {% if page.url == '/faq' or page.url == '/faq/' %}aria-current="page"{% endif %}>FAQ</a></li>
@@ -28,4 +28,3 @@
     </button>
   </div>
 </header>
-

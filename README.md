@@ -30,6 +30,8 @@ src/
 ├── css/custom.css         # All styles (design tokens at the top)
 ├── index.njk              # Landing page
 ├── affiliates.njk         # Partners page
+├── weather.njk            # Mountain weather & snow features
+├── faq.njk                # Product, weather, and account FAQs
 ├── privacy.njk            # Privacy Policy
 ├── terms.njk              # Terms of Service
 ├── 404.njk                # Custom 404 page
@@ -38,6 +40,10 @@ src/
 ├── robots.txt             # Robots policy
 ├── _headers               # Vercel headers (security, caching)
 └── _redirects             # Vercel redirects (.html → extensionless)
+
+`docs/product-feature-reference.md` records the implemented app features behind
+the site copy, plus coverage and availability limits. Recheck it against `../SkiBudsv3`
+when product features or weather sources change.
 ```
 
 ## Local development
@@ -83,7 +89,7 @@ Design tokens live at the top of `src/css/custom.css`. The brand blue is `#0144e
 Two conventions worth preserving:
 
 - **The launch status board** in the hero replaces the app store badges. Both store listings currently 404, so the board states availability in the mountain's own vocabulary instead of linking to dead pages. Update the rows in `src/_data/site.json` when the app actually ships.
-- **Trail difficulty markers** (● ■ ◆ ◆◆) appear only in the ability-levels section, because that is the one place they describe the actual content. They are not a decorative motif — do not spread them to other sections.
+- **Trail difficulty markers** belong only in the ability-levels section. Discovery supports additional skill-level and riding-style choices beyond the four examples shown on the landing page.
 
 ## Content updates
 

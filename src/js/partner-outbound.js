@@ -8,8 +8,7 @@
 
   document.addEventListener('click', function (e) {
     var target = e.target;
-    var link =
-      target && target.closest ? target.closest('.partner a[target="_blank"]') : null;
+    var link = target && target.closest ? target.closest('.partner a[target="_blank"]') : null;
     if (!link || link.dataset.outboundTracked) return;
     link.dataset.outboundTracked = '1';
     var card = link.closest('.partner');

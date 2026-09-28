@@ -10,9 +10,18 @@ module.exports = {
   cleanupOutdatedCaches: true,
   clientsClaim: true,
   skipWaiting: true,
-  // Serve the offline page when a navigation fails (build emits /offline/index.html).
-  navigateFallback: '/offline.html',
   runtimeCaching: [
+    {
+      // Try the requested page before falling back to the precached offline page.
+      urlPattern: ({ request, sameOrigin }) => sameOrigin && request.mode === 'navigate',
+      handler: 'NetworkFirst',
+      options: {
+        cacheName: 'pages',
+        precacheFallback: {
+          fallbackURL: '/offline.html',
+        },
+      },
+    },
     {
       urlPattern: ({ request, sameOrigin }) =>
         sameOrigin &&

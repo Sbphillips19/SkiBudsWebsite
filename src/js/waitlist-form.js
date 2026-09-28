@@ -45,7 +45,7 @@
           window.trackEvent('Waitlist Error', { stage: 'api_' + response.status, page: '/' });
         }
       }
-    } catch (err) {
+    } catch {
       status.textContent = 'Network error. Please try again.';
       status.style.color = '#fff';
       if (window.trackEvent) window.trackEvent('Waitlist Error', { stage: 'network', page: '/' });

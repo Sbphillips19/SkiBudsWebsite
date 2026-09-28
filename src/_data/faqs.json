@@ -6,19 +6,15 @@
       "items": [
         {
           "q": "What is SkiBuds?",
-          "a": "SkiBuds is a community app for skiers and snowboarders to find riding partners, track runs, and follow mountain conditions. Whether you're looking for someone to lap groomers with, explore backcountry terrain, or just want to know the snow report before you commit to a line — SkiBuds connects you with people who ride at your level, at your mountain."
+          "a": "SkiBuds brings mountain weather, rider discovery, maps, messaging, and GPS tracking into one app for skiers and snowboarders. Start with the forecast, find people who share your riding style, see friends on the mountain when they choose to share, and save a recap of your day."
         },
         {
           "q": "Who is SkiBuds for?",
-          "a": "SkiBuds is for anyone 18+ who skis or snowboards — from first-timers on the bunny hill to backcountry veterans earning their turns. The app matches you by ability level (Green, Blue, Black, Backcountry) so nobody waits at the bottom and nobody gets in over their head."
+          "a": "SkiBuds is for skiers and snowboarders 18 and older, from beginners finding their feet to experienced riders planning their next powder day. Profiles and discovery filters help you find people with a similar skill level, riding style, and availability. You decide who to connect with and what to ride together."
         },
         {
-          "q": "How does the matching work?",
-          "a": "You select your home mountains, ability level, and the kind of day you're looking for (chill groomers, steeps & trees, backcountry, etc.). SkiBuds shows you other riders who match — same mountain, same level, same vibe. You can message, share location, and plan your day together."
-        },
-        {
-          "q": "Is SkiBuds free?",
-          "a": "Yes, the core app is free to download and use. There are no subscription fees for finding partners, tracking runs, or checking conditions."
+          "q": "How do I find people to ride with?",
+          "a": "Open Discover to browse riders and filter by skill level, availability, and interests such as groomers, park, powder, moguls, trees, or backcountry. View a profile, send a friend request, and use chat to work out the day together. Availability comes from riders' profile preferences."
         }
       ]
     },
@@ -28,23 +24,73 @@
       "items": [
         {
           "q": "Run tracking — how does it work?",
-          "a": "Start a session when you hit the lifts. SkiBuds uses GPS to record each run, automatically separating lift rides from actual skiing so your vertical reflects what you actually skied. View stats like vertical feet, run count, max speed, and a map of your day."
+          "a": "Start tracking from the mountain map to record your day with GPS. SkiBuds detects runs and lift rides and records distance, vertical, speed, and duration. Stop the session to review its summary, then revisit saved days and their routes in Activity History. Tracking requires location permission; recording while SkiBuds is in the background also depends on background location permission."
         },
         {
           "q": "Can I use SkiBuds offline?",
-          "a": "Run tracking works offline — GPS doesn't need cell service. Maps, conditions, and messaging sync when you're back online. The PWA also caches the app shell for offline access."
+          "a": "Download a mountain's base map before you lose service. GPS and a downloaded base map can remain useful without a connection, but trail and terrain overlays, weather, friend locations, and messaging may still need one. A base map download does not include every live layer."
         },
         {
           "q": "What mountains are supported?",
-          "a": "SkiBuds supports major resorts across North America at launch, with more added regularly. You can also add custom locations for sidecountry or lesser-known hills."
+          "a": "Use Mountains to search the resort catalog and save favorites for quick access. Available features vary by resort: some have detailed trail and lift overlays, while others have a mountain base map. Weather sources, elevation forecasts, and other mountain information also depend on local coverage."
+        },
+        {
+          "q": "What can I see on the mountain map?",
+          "a": "Explore trails and lifts where coverage is available, tap runs for details such as difficulty, and change terrain views with topography, hillshade, or 3D terrain. The map also brings together your GPS position, tracking controls, and friends who have chosen to share their location. Map layers and details vary by mountain."
         },
         {
           "q": "How does live location sharing work?",
-          "a": "Opt-in only. When you're on the mountain with your crew, you can toggle live location sharing to see each other on the map. It's off by default, expires automatically at end of day, and you can turn it off anytime."
+          "a": "Location sharing is off by default and visible to friends. In Map Settings, choose Live or updates every 30 seconds, then turn sharing off whenever you want. A resort's Friends Here Now view helps you see friends who are sharing there. Live updates require a connection and location permission."
         },
         {
-          "q": "Where does the snow data come from?",
-          "a": "We aggregate forecasts and observations from NOAA, OpenSnow, resort-reported data, and community submissions — all in one place so you can plan around the weather instead of guessing."
+          "q": "What is a Day Recap?",
+          "a": "A Day Recap turns a saved activity into a shareable summary of time, distance, vertical, runs, and lifts. Choose whether to include the resort name or maximum speed, then share it to Chat or Stories. The recap leaves out your GPS route and precise start and finish locations."
+        },
+        {
+          "q": "How do Chat and Stories fit into the day?",
+          "a": "Use private messages and mountain conversations to make plans and keep in touch. Chat supports photos, replies, and reactions. Stories lets you share a mountain moment by choosing a photo, adding its mountain and a caption, and reviewing it before publishing. You can also start a Story with your Day Recap."
+        },
+        {
+          "q": "Are lift and trail reports official resort updates?",
+          "a": "The resort status feature uses community reports. Riders who are checked in or within five miles can report a lift or trail as open or closed. Report counts, freshness, and confidence help give those reports context. Check the resort's official information for its current operating decisions."
+        }
+      ]
+    },
+    {
+      "id": "mountain-weather",
+      "title": "Mountain Weather & Snow",
+      "items": [
+        {
+          "q": "What weather information does SkiBuds show?",
+          "a": "Open a resort for hourly, daily, and weekly forecasts, with snow totals for the next 24 hours, 48 hours, and seven local days, including the current day at the resort. Explore temperature, wind, gusts, precipitation, and storm timing alongside the snow forecast. Where available, nearby SNOTEL stations add measured snow-depth context."
+        },
+        {
+          "q": "Can I compare weather at the base and summit?",
+          "a": "Enable multiple elevation forecasts to explore base, mid-mountain, and summit views. Available temperature, snowfall, and wind detail depends on the source and mountain. Some providers do not supply a distinct forecast for each elevation, so selecting an elevation does not mean conditions were measured there."
+        },
+        {
+          "q": "What is Ski Signal?",
+          "a": "Ski Signal highlights a suggested riding window using the available forecast and shows its confidence. It helps you compare timing around snow, wind, and other conditions. Use it alongside the hourly forecast and the mountain's current information when deciding when to go."
+        },
+        {
+          "q": "Where does the weather data come from?",
+          "a": "Configured forecast sources include the National Weather Service, WeatherAPI, and MET Norway. The sources available for a particular mountain vary with coverage and service availability. Weather details show source attribution, update times, and confidence, with information about fallback data when applicable, so you can see the basis for the forecast you are reading."
+        },
+        {
+          "q": "What is included in the advanced weather views?",
+          "a": "Optional views go deeper into snow quality, snow-to-liquid ratios, freezing levels, wind exposure, storm timing, and model comparisons. Day-planning and atmospheric insights add context to the forecast. Turn on the details you find useful in Advanced Weather Settings; individual views depend on available data."
+        },
+        {
+          "q": "Does the radar show where a storm will go next?",
+          "a": "Radar playback uses recent RainViewer imagery to show how precipitation has been moving. It is a look at recent conditions, not a forecast animation of where the storm will go next. Use the hourly forecast and storm timing views for the outlook."
+        },
+        {
+          "q": "How do powder alerts work?",
+          "a": "Powder alerts are opt-in. Choose favorite resorts, a snowfall threshold, wind and confidence preferences, and quiet hours. SkiBuds evaluates alerts as weather refreshes and when the app returns to the foreground. Keep the app's forecasts current; alerts are not a promise of continuous background storm monitoring."
+        },
+        {
+          "q": "What does forecast confidence tell me?",
+          "a": "Confidence gives context about the available forecast information. Model comparisons can reveal agreement or differences between sources, while timestamps show how recently information was updated. Conditions can still change, so confidence is not a guarantee of a particular snowfall total or riding outcome."
         }
       ]
     },
@@ -54,15 +100,15 @@
       "items": [
         {
           "q": "What data do you collect?",
-          "a": "Only what's needed to make the app work: account info (email, username), location (with permission, for matching and run tracking), usage analytics, and content you create (messages, photos). <a href=\"/privacy\">Read our full Privacy Policy</a>."
+          "a": "Only what's needed to make the app work: account info (email, username), location (with permission, for mountain features and run tracking), usage analytics, and content you create (messages, photos). <a href=\"/privacy\">Read our full Privacy Policy</a>."
         },
         {
           "q": "Is my location data sold?",
-          "a": "Never. We don't sell your data to anyone. Location is used solely for matching you with nearby riders and tracking your runs. You control permissions at the system level."
+          "a": "Never. We don't sell your data to anyone. Location supports mountain features, GPS tracking, and optional sharing with friends. You control location permissions at the system level and sharing in the app."
         },
         {
           "q": "How do you keep accounts secure?",
-          "a": "We use Firebase Authentication with secure password handling, optional 2FA via social login (Google, Apple), and encrypted data in transit and at rest. Regular security audits and access controls protect your information."
+          "a": "SkiBuds uses Firebase Authentication for account sign-in and password handling, with access controls for account data. You can reset your password from the sign-in screen. <a href=\"/privacy\">Read our Privacy Policy</a> for more about how your information is handled."
         },
         {
           "q": "Can I delete my account?",
@@ -76,7 +122,7 @@
       "items": [
         {
           "q": "Do I need an account to use SkiBuds?",
-          "a": "Yes — an account lets you find partners, save preferences, track runs over time, and sync across devices. Sign up takes 30 seconds with email or social login."
+          "a": "Yes. An account lets you connect with riders, use chat, save preferences, and keep a history of your tracked days. Sign up with your email in the app."
         },
         {
           "q": "Can I use SkiBuds on multiple devices?",

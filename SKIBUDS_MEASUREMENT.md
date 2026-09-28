@@ -15,24 +15,24 @@ event properties as `props`.
 
 ## Events
 
-| Event                | Trigger                                              | Properties                          | Defined in |
-| -------------------- | ---------------------------------------------------- | ----------------------------------- | ---------- |
-| `Waitlist Intent`    | Waitlist form submit attempt (homepage)              | `page`                              | `src/js/waitlist-form.js` |
-| `Waitlist Signup`    | Waitlist POST returns ok                             | `page`                              | `src/js/waitlist-form.js` |
-| `Waitlist Error`     | Waitlist POST fails (`stage: api_<status>` or `network`) | `stage`, `page`                 | `src/js/waitlist-form.js` |
-| `App CTA Click`      | Any element with `data-track-cta="<label>"` clicked, once per element per pageview | `cta_label`, `page` | `src/js/cta-tracking.js` |
-| `Contact Click`      | Any `mailto:` link clicked                           | `page`                              | `src/js/cta-tracking.js` |
-| `Partner Outbound`   | Partner card link clicked on partners page           | `partner_name`, `page`              | `src/js/partner-outbound.js` |
-| `Resort Section View`| Resort section scrolled into view on homepage        | `section_id`, `page`                | `src/js/resort-sections.js` |
-| `Content Engaged`    | Blog article scrolled to 50% visibility              | `page`                              | `src/js/content-engaged.js` |
+| Event                 | Trigger                                                                            | Properties             | Defined in                   |
+| --------------------- | ---------------------------------------------------------------------------------- | ---------------------- | ---------------------------- |
+| `Waitlist Intent`     | Waitlist form submit attempt (homepage)                                            | `page`                 | `src/js/waitlist-form.js`    |
+| `Waitlist Signup`     | Waitlist POST returns ok                                                           | `page`                 | `src/js/waitlist-form.js`    |
+| `Waitlist Error`      | Waitlist POST fails (`stage: api_<status>` or `network`)                           | `stage`, `page`        | `src/js/waitlist-form.js`    |
+| `App CTA Click`       | Any element with `data-track-cta="<label>"` clicked, once per element per pageview | `cta_label`, `page`    | `src/js/cta-tracking.js`     |
+| `Contact Click`       | Any `mailto:` link clicked                                                         | `page`                 | `src/js/cta-tracking.js`     |
+| `Partner Outbound`    | Partner card link clicked on partners page                                         | `partner_name`, `page` | `src/js/partner-outbound.js` |
+| `Resort Section View` | Resort section scrolled into view on homepage                                      | `section_id`, `page`   | `src/js/resort-sections.js`  |
+| `Content Engaged`     | Blog article scrolled to 50% visibility                                            | `page`                 | `src/js/content-engaged.js`  |
 
 Plausible built-ins (not via `trackEvent`):
 
-| Event          | Trigger                        | Properties            |
-| -------------- | ------------------------------ | --------------------- |
-| `pwa_install`  | `beforeinstallprompt` captured | none                  |
-| `pwa_installed`| App installed                  | none                  |
-| `web_vital`    | Core Web Vitals (once each)    | `metric`, `value`, `rating` |
+| Event           | Trigger                        | Properties                  |
+| --------------- | ------------------------------ | --------------------------- |
+| `pwa_install`   | `beforeinstallprompt` captured | none                        |
+| `pwa_installed` | App installed                  | none                        |
+| `web_vital`     | Core Web Vitals (once each)    | `metric`, `value`, `rating` |
 
 Duplicate-event prevention: `App CTA Click` and `Partner Outbound` mark their element
 (`data-cta-tracked` / outbound flag); `web_vital` sends each metric at most once.
