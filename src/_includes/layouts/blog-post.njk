@@ -23,7 +23,7 @@ pageScripts:
 <article class="blog-post">
   <header class="blog-post__header">
     <p class="blog-post__meta">
-      <time datetime="{{ page.date }}">{{ page.date | dateDisplay }}</time>
+      <time datetime="{{ page.date | isoDate }}">{{ page.date | dateDisplay }}</time>
       {% if tags %}
         {% for tag in tags %}
           <span class="blog-post__tag">{{ tag }}</span>

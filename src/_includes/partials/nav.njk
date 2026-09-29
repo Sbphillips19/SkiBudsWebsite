@@ -1,10 +1,10 @@
-<header class="nav" role="banner">
+<header class="nav">
   <div class="nav__inner">
     <a href="/" class="nav__brand" aria-label="{{ site.name }} home">
       <img src="/images/SkiBudsName.png" alt="{{ site.name }}" width="132" height="31">
     </a>
 
-    <nav aria-label="Primary navigation" class="nav__menu" id="nav-menu" role="navigation">
+    <nav aria-label="Primary navigation" class="nav__menu" id="nav-menu">
       <ul class="nav__links">
         <li><a href="/#about" {% if page.url == '/' %}aria-current="page"{% endif %}>What it does</a></li>
         <li><a href="/weather/" {% if page.url == '/weather' or page.url == '/weather/' %}aria-current="page"{% endif %}>Weather &amp; snow</a></li>

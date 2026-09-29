@@ -10,7 +10,12 @@
   <link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url }}">
   <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url }}">
   <meta name="theme-color" content="{{ site.themeColor }}">
-  {% if noindex %}<meta name="robots" content="noindex">{% else %}<meta name="robots" content="all,follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">{% endif %}
+  <meta name="color-scheme" content="light dark">
+  <meta name="author" content="{{ site.company }}">
+  <meta name="application-name" content="{{ site.name }}">
+  <meta name="apple-mobile-web-app-title" content="{{ site.shortName }}">
+  <meta name="format-detection" content="telephone=no">
+  {% if noindex %}<meta name="robots" content="noindex">{% else %}<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">{% endif %}
 
   <!-- Resource Hints -->
   <link rel="preconnect" href="https://www.instagram.com" crossorigin>
@@ -20,6 +25,8 @@
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
   <!-- Open Graph -->
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:locale" content="en_US">
   <meta property="og:type" content="{{ ogType or 'website' }}">
   <meta property="og:title" content="{% if title %}{{ title }} — {% endif %}{{ site.name }}">
   <meta property="og:description" content="{{ description or site.description }}">
@@ -28,14 +35,14 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/webp">
-  <meta property="og:image:alt" content="SkiBuds — Find your people on the mountain">
+  <meta property="og:image:alt" content="Snow-covered peaks above low cloud, seen from Whistler. SkiBuds: find your people on the mountain.">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if title %}{{ title }} — {% endif %}{{ site.name }}">
+  <meta name="twitter:description" content="{{ description or site.description }}">
   <meta name="twitter:site" content="@skibudsapp">
   <meta name="twitter:creator" content="@skibudsapp">
-  <meta property="twitter:image" content="{{ site.url }}/images/WhistlerPeakView-og.webp">
-  <meta property="twitter:image:alt" content="SkiBuds — Find your people on the mountain">
-  <meta property="twitter:image:width" content="1200">
-  <meta property="twitter:image:height" content="630">
+  <meta name="twitter:image" content="{{ site.url }}/images/WhistlerPeakView-og.webp">
+  <meta name="twitter:image:alt" content="Snow-covered peaks above low cloud, seen from Whistler. SkiBuds: find your people on the mountain.">
 
   <!-- Favicons & Manifest -->
   <link rel="manifest" href="/manifest.json">
@@ -68,10 +75,10 @@
     html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.65; -webkit-font-smoothing: antialiased; }
     img { max-width: 100%; height: auto; display: block; }
-    :root { --ink: #0b1220; --blue: #0144ee; --lift: #3b82f6; --snow: #f7f9fc; --slate: #5a6478; --hold: #ffb020; --line: #dfe5ef; --bg: var(--snow); --surface: #ffffff; --text: var(--ink); --text-muted: var(--slate); --font-display: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; --font-body: var(--font-display); --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; --measure: 68ch; --radius: 14px; --shell: min(1120px, 100% - 2.5rem); }
-    @media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --bg: #070c17; --surface: #0f1729; --text: #eaf0fb; --text-muted: #9aa7bf; --line: #1e2942; } }
-    :root[data-theme='dark'] { --bg: #070c17; --surface: #0f1729; --text: #eaf0fb; --text-muted: #9aa7bf; --line: #1e2942; }
-    a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    :root { --ink: #0b1220; --blue: #0144ee; --link: var(--blue); --lift: #3b82f6; --snow: #f7f9fc; --slate: #5a6478; --hold: #ffb020; --line: #dfe5ef; --bg: var(--snow); --surface: #ffffff; --text: var(--ink); --text-muted: var(--slate); --font-display: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; --font-body: var(--font-display); --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; --measure: 68ch; --radius: 14px; --shell: min(1120px, 100% - 2.5rem); }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --bg: #070c17; --surface: #0f1729; --text: #eaf0fb; --text-muted: #9aa7bf; --line: #1e2942; --link: #7aa7ff; } }
+    :root[data-theme='dark'] { --link: #7aa7ff; --bg: #070c17; --surface: #0f1729; --text: #eaf0fb; --text-muted: #9aa7bf; --line: #1e2942; }
+    a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 3px; }
     h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; margin: 0 0 0.5em; letter-spacing: -0.03em; text-wrap: balance; }
     h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 800; text-transform: uppercase; letter-spacing: -0.035em; }
     .shell { width: var(--shell); margin-inline: auto; }
@@ -310,7 +317,7 @@
 <body id="top">
   <a href="#main-content" class="skip-link">Skip to main content</a>
   {% include "partials/nav.njk" %}
-  <main id="main-content" role="main">
+  <main id="main-content" tabindex="-1">
     {{ content | safe }}
   </main>
   {% include "partials/footer.njk" %}

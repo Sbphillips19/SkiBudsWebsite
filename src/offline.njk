@@ -10,7 +10,7 @@ pageScripts:
 ---
 
   <div class="shell offline-page">
-    <div class="offline-page__icon">📡</div>
+    <div class="offline-page__icon" aria-hidden="true">📡</div>
     <h1 class="offline-page__title">You're Offline</h1>
     <p class="lede offline-page__description">
       Looks like you've lost connection. Some features like the waitlist signup and social links may not work until you're back online.
@@ -19,7 +19,7 @@ pageScripts:
       Run tracking and cached content will still work. Your data will sync when you reconnect.
     </p>
     <div class="offline-page__actions">
-      <button onclick="window.location.reload()" class="btn">Try Again</button>
+      <button type="button" id="offline-retry" class="btn">Try Again</button>
       <a href="/" class="btn btn--quiet">Go Home</a>
     </div>
   </div>

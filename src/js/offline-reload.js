@@ -8,4 +8,11 @@
   window.addEventListener('online', function () {
     window.location.reload();
   });
+
+  var retry = document.getElementById('offline-retry');
+  if (retry) {
+    retry.addEventListener('click', function () {
+      window.location.reload();
+    });
+  }
 })();

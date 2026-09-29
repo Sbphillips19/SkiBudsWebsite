@@ -10,11 +10,11 @@ pageScripts:
 ---
 
 <!-- Hero -->
-<section class="hero">
-  {% image "/images/WhistlerPeakView.jpg", "Skiers on Whistler mountain", "100vw", "hero__bg", "eager", "high", [640, 1080, 1920] %}
+<section class="hero" aria-labelledby="hero-heading">
+  {% image "/images/WhistlerPeakView.jpg", "View from Whistler across snow-covered peaks and a jagged spire, with low cloud filling the valley below a hazy sun", "100vw", "hero__bg", "eager", "high", [640, 1080, 1920] %}
   <div class="shell">
     {% image "logo.png", "SkiBuds logo", "108px", "hero__logo rise", "eager", "high" %}
-    <h1 class="rise rise--2">Find your people on the mountain</h1>
+    <h1 id="hero-heading" class="rise rise--2">Find your people on the mountain</h1>
     <p class="lede rise rise--3">
       Find the snow. Find your crew. Make a day of it. Mountain weather, riding partners,
       trail maps, and run tracking &mdash; together in SkiBuds.
@@ -43,7 +43,7 @@ pageScripts:
       </p>
     </div>
 
-    <div class="forecast-overview" aria-label="Weather features in the upcoming app">
+    <div class="forecast-overview" role="group" aria-label="Weather features in the upcoming app">
       <article>
         <p class="eyebrow">Follow the snowfall</p>
         <h3>24 hours. 48 hours. 7 days.</h3>
@@ -85,17 +85,17 @@ pageScripts:
 </section>
 
 <!-- What it does -->
-<section class="band" id="about">
+<section class="band" id="about" aria-labelledby="about-heading">
   <div class="shell">
     <p class="eyebrow">What it does</p>
-    <h2>One app for the whole mountain day</h2>
+    <h2 id="about-heading">One app for the whole mountain day</h2>
     <p class="lede">
       SkiBuds started on the chairlifts in Whistler, from conversations about what riders
       actually wanted on the mountain. The rebuild connects that community with the tools
       to plan a day, explore a resort, and remember every run.
     </p>
 
-    <div class="origin-gallery" aria-label="The SkiBuds community on the mountain">
+    <div class="origin-gallery" role="group" aria-label="The SkiBuds community on the mountain">
       <figure>
         {% image "/_includes/images/skibuds-riders-flag.jpg", "SkiBuds riders gathered on a snowy mountain, holding their blue SkiBuds flag", "(min-width: 641px) 65vw, 100vw", "origin-gallery__image", "lazy", "auto", [640, 1080] %}
         <figcaption>Good days are better together.</figcaption>
@@ -163,10 +163,10 @@ pageScripts:
 </section>
 
 <!-- Ability levels -->
-<section class="band band--tint" id="levels">
+<section class="band band--tint" id="levels" aria-labelledby="levels-heading">
   <div class="shell">
     <p class="eyebrow">Ride at your level</p>
-    <h2>Find your pace. Pick your terrain.</h2>
+    <h2 id="levels-heading">Find your pace. Pick your terrain.</h2>
     <p class="lede">
       Share your ability and riding style, then use discovery filters to find people
       who want a similar pace and terrain. Start the conversation before the first chair.
@@ -219,10 +219,10 @@ pageScripts:
       <h2 id="launch-heading">Get the first chair on launch day.</h2>
       <p class="lede">We&rsquo;re rebuilding SkiBuds for iOS and Android. Join riders following along, and we&rsquo;ll let you know when the new app is ready.</p>
       <div class="launch-count"><strong>{{ site.waitlist.count | comma }}</strong><span>riders on the waitlist</span></div>
-      <a class="launch-social" href="{{ site.social.instagram }}" target="_blank" rel="noopener" data-track-cta="instagram-launch-updates">Follow <strong>@skibudsapp</strong> for build updates &rarr;</a>
+      <a class="launch-social" href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer" data-track-cta="instagram-launch-updates">Follow <strong>@skibudsapp</strong> for build updates &rarr;<span class="visually-hidden"> (opens Instagram in a new tab)</span></a>
     </div>
     <div class="launch-signup">
-      <div class="board" aria-label="App launch status">
+      <div class="board" role="group" aria-label="App launch status">
         <div class="board__head"><span>Availability</span><span>{{ site.app.launchYear }}</span></div>
         <div class="board__row"><span class="board__label">iOS</span><span class="board__state"><span class="dot" aria-hidden="true"></span>{{ site.app.iosStatus }}</span></div>
         <div class="board__row"><span class="board__label">Android</span><span class="board__state"><span class="dot" aria-hidden="true"></span>{{ site.app.androidStatus }}</span></div>
@@ -242,10 +242,10 @@ pageScripts:
 </section>
 
 <!-- Partners -->
-<section class="band band--tint">
+<section class="band band--tint" aria-labelledby="partners-heading">
   <div class="shell">
     <p class="eyebrow">Partners</p>
-    <h2>Good people we ride with</h2>
+    <h2 id="partners-heading">Good people we ride with</h2>
     <p class="lede">
       SkiBuds works with shops, clubs, and trip organizers across North America.
     </p>

@@ -11,6 +11,7 @@
      Snow-white rather than cream: this is a mountain, not a bakery. */
   --ink: #0b1220;
   --blue: #0144ee;
+  --link: var(--blue);
   --lift: #3b82f6;
   --snow: #f7f9fc;
   --slate: #5a6478;
@@ -43,9 +44,11 @@
     --text: #eaf0fb;
     --text-muted: #9aa7bf;
     --line: #1e2942;
+    --link: #7aa7ff;
   }
 }
 :root[data-theme='dark'] {
+  --link: #7aa7ff;
   --bg: #070c17;
   --surface: #0f1729;
   --text: #eaf0fb;
@@ -92,7 +95,7 @@ img {
   display: block;
 }
 a {
-  color: var(--blue);
+  color: var(--link);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
@@ -234,7 +237,7 @@ p {
   text-decoration: none;
 }
 .nav__links a:hover {
-  color: var(--blue);
+  color: var(--link);
 }
 
 @media (width <= 1000px) {
@@ -277,7 +280,7 @@ p {
   }
   .nav__toggle:hover {
     border-color: var(--blue);
-    color: var(--blue);
+    color: var(--link);
   }
   .nav__toggle-icon {
     width: 24px;
@@ -1017,7 +1020,7 @@ a.board__state:hover {
   color: #fff;
   text-decoration: underline;
 }
-.foot h3 {
+.foot h2 {
   color: #fff;
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -1095,7 +1098,7 @@ a.board__state:hover {
     color 0.15s ease;
 }
 .legal__toc a:hover {
-  color: var(--blue);
+  color: var(--link);
   border-bottom-color: var(--blue);
 }
 .legal h1,
@@ -1204,7 +1207,7 @@ a.board__state:hover {
   text-decoration: none;
 }
 .blog-card h2 a:hover {
-  color: var(--blue);
+  color: var(--link);
 }
 .blog-card__description {
   color: var(--text-muted);
@@ -1267,7 +1270,7 @@ a.board__state:hover {
   margin-bottom: 0.5rem;
 }
 .blog-post__content a {
-  color: var(--blue);
+  color: var(--link);
   text-decoration-thickness: 2px;
 }
 .blog-post__content code {
@@ -1305,7 +1308,7 @@ a.board__state:hover {
 .error-page__code {
   font-size: clamp(6rem, 15vw, 12rem);
   font-weight: 800;
-  color: var(--blue);
+  color: var(--link);
   line-height: 1;
   margin-bottom: 1rem;
 }
@@ -1357,4 +1360,42 @@ a.board__state:hover {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* Interaction affordances: every interactive control shows a pointer and a visible hover state */
+a[href],
+button:not(:disabled),
+summary,
+label[for],
+select,
+[role='button'] {
+  cursor: pointer;
+}
+a[href]:not(.btn):not(.skip-link):hover {
+  text-decoration-thickness: 2px;
+}
+.blog-post__content a:hover,
+.legal a:hover,
+.lede a:hover,
+.foot a:hover,
+.hero__link:hover,
+.launch-social:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+summary:hover {
+  color: var(--link);
+}
+button:disabled,
+.btn:disabled {
+  cursor: not-allowed;
+}
+summary h3 {
+  display: inline;
+  margin: 0;
+  font-size: inherit;
+}
+
+.partner .partner__name {
+  font-size: 1.25rem;
 }

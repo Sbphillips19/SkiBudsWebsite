@@ -17,7 +17,7 @@ eleventyExcludeFromCollections: true
         <article class="blog-card">
           <header>
             <p class="blog-card__meta">
-              <time datetime="{{ post.date }}">{{ post.date | dateDisplay }}</time>
+              <time datetime="{{ post.date | isoDate }}">{{ post.date | dateDisplay }}</time>
               {% if post.data.tags %}
                 {% for tag in post.data.tags %}
                   <span class="blog-card__tag">{{ tag }}</span>
@@ -30,7 +30,7 @@ eleventyExcludeFromCollections: true
             {% endif %}
           </header>
           <footer>
-            <a href="{{ post.url }}" class="btn btn--quiet">Read more →</a>
+            <a href="{{ post.url }}" class="btn btn--quiet" aria-label="Read more: {{ post.data.title }}">Read more →</a>
           </footer>
         </article>
       {% endfor %}
