@@ -1,13 +1,16 @@
 ---
 layout: base.njk
-title: FAQ
-description: Get answers about SkiBuds mountain forecasts, snowfall, Ski Signal, powder alerts, maps, rider discovery, GPS tracking, and Day Recaps that keep your route private.
-eleventyExcludeFromCollections: true
+lastModified: 2026-09-29
+title: SkiBuds FAQ
+seoTitle: Ski Buddies, Forecasts & App Launch FAQ
+description: Get answers about the SkiBuds launch, finding ski buddies, snow forecasts, powder alerts, GPS run tracking, offline maps, and opt-in location sharing.
+pageType: FAQPage
 ---
 
   <div class="shell legal">
-    <h1>Frequently Asked Questions</h1>
-    <p class="legal__meta"><time datetime="2026-09-26">Last Updated: September 26, 2026</time></p>
+    <h1>SkiBuds questions, answered</h1>
+    <p class="lede">The new SkiBuds app is coming soon to iOS and Android. These answers describe the rebuild; <a href="/#waitlist">join the launch waitlist</a> for availability updates.</p>
+    <p class="legal__meta"><time datetime="{{ lastModified | isoDate }}">Last updated: {{ lastModified | dateDisplay }}</time></p>
 
     <nav class="legal__toc" aria-label="Table of contents">
       <h2>Quick Links</h2>
@@ -32,7 +35,7 @@ eleventyExcludeFromCollections: true
     {% endfor %}
 
     <hr>
-    <p><a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="/">Home</a></p>
+    <p><a href="/privacy/">Privacy Policy</a> &middot; <a href="/terms/">Terms of Service</a> &middot; <a href="/">Home</a></p>
     <a href="#top" class="btn btn--quiet" style="margin-top: 2rem;">Back to top</a>
   </div>
 
@@ -51,7 +54,7 @@ eleventyExcludeFromCollections: true
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": "{{ site.url }}/faq#faqpage",
+    "@id": "{{ seo.canonical }}#webpage",
     "url": "{{ site.url }}/faq/",
     "mainEntity": [{{ qjson | safe }}
     ]

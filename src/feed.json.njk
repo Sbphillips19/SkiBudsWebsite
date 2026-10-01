@@ -4,21 +4,22 @@ eleventyExcludeFromCollections: true
 ---
 {
   "version": "https://jsonfeed.org/version/1.1",
-  "title": "{{ site.name }} Blog",
-  "home_page_url": "{{ site.url }}/blog",
-  "feed_url": "{{ site.url }}/feed.json",
-  "description": "{{ site.description }}",
+  "title": {{ (site.name + " Blog") | json | safe }},
+  "home_page_url": {{ (site.url + "/blog/") | json | safe }},
+  "feed_url": {{ (site.url + "/feed.json") | json | safe }},
+  "description": {{ site.description | json | safe }},
   "language": "en",
   "items": [
     {% for post in collections.blog %}
     {
-      "id": "{{ site.url }}{{ post.url }}",
-      "url": "{{ site.url }}{{ post.url }}",
-      "title": "{{ post.data.title | escape }}",
-      "content_html": {{ post.templateContent | safe | json }},
-      "summary": "{{ post.data.description | escape }}",
-      "date_published": "{{ post.date | dateDisplay }}",
-      "tags": {% if post.data.tags %}[{% for tag in post.data.tags %}"{{ tag }}"{% if not loop.last %}, {% endif %}{% endfor %}]{% else %}[]{% endif %}
+      "id": {{ post.url | canonicalUrl(site.url) | json | safe }},
+      "url": {{ post.url | canonicalUrl(site.url) | json | safe }},
+      "title": {{ post.data.title | json | safe }},
+      "content_html": {{ post.templateContent | json | safe }},
+      "summary": {{ post.data.description | json | safe }},
+      "date_published": {{ post.data.date | isoDateTime | json | safe }},
+      "date_modified": {{ (post.data.lastModified or post.data.date) | isoDateTime | json | safe }},
+      "tags": {{ (post.data.tags or []) | json | safe }}
     }{% if not loop.last %},{% endif %}
     {% endfor %}
   ]

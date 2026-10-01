@@ -1161,6 +1161,50 @@ a.board__state:hover {
   }
 }
 
+/* --- Feature pages and breadcrumbs ------------------------------------ */
+.breadcrumbs {
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.breadcrumbs li {
+  overflow-wrap: anywhere;
+}
+.breadcrumbs li + li::before {
+  content: '/';
+  margin-right: 0.5rem;
+}
+.feature-page__header {
+  max-width: 56rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--line);
+}
+.feature-page__header h1 {
+  max-width: 22ch;
+}
+.feature-page__body {
+  max-width: var(--measure);
+  padding-top: 1rem;
+}
+.blog-post h1 {
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  overflow-wrap: break-word;
+}
+.blog-post__content blockquote {
+  margin-inline: 0;
+  padding: 0.5rem 1.25rem;
+  border-left: 3px solid var(--link);
+  background: var(--surface);
+}
+
 /* --- Blog ------------------------------------------------------------- */
 .blog-list {
   display: grid;

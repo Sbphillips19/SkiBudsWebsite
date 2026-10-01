@@ -1,38 +1,32 @@
 ---
 layout: base.njk
+article: true
+articleType: BlogPosting
+ogType: article
+parentTitle: App updates
+parentUrl: /blog/
 pageScripts:
   - content-engaged.js
 ---
 
-{% set ogType = 'article' %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": {{ title | json | safe }},
-  "description": {{ (description or site.description) | json | safe }},
-  "datePublished": "{{ page.date.toISOString() }}",
-  "dateModified": "{{ page.date.toISOString() }}",
-  "url": "{{ site.url }}{{ page.url }}",
-  "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
-  "author": { "@type": "Organization", "name": {{ site.company | json | safe }}, "url": "{{ site.url }}" },
-  "publisher": { "@type": "Organization", "name": {{ site.company | json | safe }}, "url": "{{ site.url }}" }
-}
-</script>
-
-<article class="blog-post">
+<article class="blog-post shell">
+  {% include "partials/breadcrumbs.njk" %}
   <header class="blog-post__header">
     <p class="blog-post__meta">
-      <time datetime="{{ page.date | isoDate }}">{{ page.date | dateDisplay }}</time>
+      <span>By {{ site.name }}</span>
+      <time datetime="{{ date | isoDate }}">{{ date | dateDisplay }}</time>
+      {% if lastModified and (lastModified | isoDate) != (date | isoDate) %}
+      <span>Updated <time datetime="{{ lastModified | isoDate }}">{{ lastModified | dateDisplay }}</time></span>
+      {% endif %}
       {% if tags %}
         {% for tag in tags %}
           <span class="blog-post__tag">{{ tag }}</span>
         {% endfor %}
       {% endif %}
     </p>
-    <h1>{{ title }}</h1>
+    <h1>{{ title | escape }}</h1>
     {% if description %}
-      <p class="blog-post__description">{{ description }}</p>
+      <p class="blog-post__description">{{ description | escape }}</p>
     {% endif %}
   </header>
 
@@ -42,7 +36,9 @@ pageScripts:
 
   <footer class="blog-post__footer">
     <hr>
-    <p><a href="/blog">← All updates</a> · <a href="/">Home</a></p>
+    <p><a href="{{ parentUrl }}">&larr; {{ parentTitle }}</a> &middot; <a href="/find-ski-buddies/">Find ski buddies</a> &middot; <a href="/weather/">Snow forecasts</a></p>
+    <p>SkiBuds is coming soon to iOS and Android.</p>
+    <a href="/#waitlist" class="btn" data-track-cta="article-join-waitlist">Get launch updates &rarr;</a>
   </footer>
 </article>
 

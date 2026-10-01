@@ -8,6 +8,7 @@ const eleventyImage = require('@11ty/eleventy-img');
 const htmlmin = require('html-minifier-terser');
 const path = require('path');
 const fs = require('fs');
+const { canonicalUrl, jsonLd } = require('./lib/seo');
 
 module.exports = function (eleventyConfig) {
   // ---------------------------------------------------------------------------
@@ -66,23 +67,16 @@ module.exports = function (eleventyConfig) {
       jpeg: { quality: 80, mozjpeg: true },
     });
 
-    const lowsrc = metadata.jpeg[0];
-
-    // Generate source elements for each format
-    const sourceAvif = metadata.avif
-      .map(entry => `<source type="image/avif" srcset="${entry.url}" sizes="${sizes}">`)
-      .join('');
-    const sourceWebp = metadata.webp
-      .map(entry => `<source type="image/webp" srcset="${entry.url}" sizes="${sizes}">`)
-      .join('');
-    const sourceJpeg = metadata.jpeg
-      .map(entry => `<source type="image/jpeg" srcset="${entry.url}" sizes="${sizes}">`)
-      .join('');
-
-    const fetchpriorityAttr = fetchpriority !== 'auto' ? ` fetchpriority="${fetchpriority}"` : '';
-    const imgAttrs = `class="${className}" loading="${loading}" alt="${alt}" decoding="async" width="${lowsrc.width}" height="${lowsrc.height}"${fetchpriorityAttr}`;
-
-    return `<picture>${sourceAvif}${sourceWebp}${sourceJpeg}<img ${imgAttrs} src="${lowsrc.url}"></picture>`;
+    // One source per format with width descriptors lets the browser choose the
+    // appropriate image and reuse the hero preload instead of fetching twice.
+    return eleventyImage.generateHTML(metadata, {
+      alt,
+      sizes,
+      class: className,
+      loading,
+      decoding: 'async',
+      fetchpriority,
+    });
   }
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
   eleventyConfig.addLiquidShortcode('image', imageShortcode);
@@ -102,9 +96,7 @@ module.exports = function (eleventyConfig) {
 
   // Canonical URL shortcode
   eleventyConfig.addShortcode('canonical', function (page) {
-    const base = 'https://skibudsapp.com';
-    const url = page.url.replace('/index.html', '/');
-    return `${base}${url}`;
+    return canonicalUrl(page.url);
   });
 
   // ---------------------------------------------------------------------------
@@ -123,6 +115,9 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('json', value => JSON.stringify(value));
+  eleventyConfig.addFilter('jsonLd', jsonLd);
+  eleventyConfig.addFilter('canonicalUrl', canonicalUrl);
+  eleventyConfig.addFilter('isoDateTime', date => new Date(date).toISOString());
 
   // W3C date (YYYY-MM-DD) for sitemap <lastmod>
   eleventyConfig.addFilter('isoDate', date => {
@@ -166,6 +161,20 @@ module.exports = function (eleventyConfig) {
       .filter(item => item.inputPath.startsWith('./src/blog/') && item.inputPath.endsWith('.md'))
       .sort((a, b) => b.date - a.date);
   });
+
+  eleventyConfig.addCollection('seoPages', collectionApi =>
+    collectionApi
+      .getAll()
+      .filter(item => item.data.layout && !item.data.noindex && item.url.endsWith('/'))
+      .sort((a, b) => a.url.localeCompare(b.url))
+  );
+
+  eleventyConfig.addCollection('guides', collectionApi =>
+    collectionApi
+      .getAll()
+      .filter(item => item.inputPath.startsWith('./src/guides/') && item.inputPath.endsWith('.md'))
+      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+  );
 
   // ---------------------------------------------------------------------------
   // Watch targets

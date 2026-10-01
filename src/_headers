@@ -1,5 +1,4 @@
-# Vercel Headers Configuration
-# https://vercel.com/docs/concepts/projects/project-configuration#headers
+# Netlify-compatible fallback. Vercel uses vercel.json in the repository root.
 
 # Security headers for all pages
 /*
@@ -11,15 +10,18 @@
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io https://www.instagram.com https://www.facebook.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://plausible.io https://api.buttondown.email https://www.instagram.com https://www.facebook.com https://www.youtube.com https://www.linkedin.com; frame-src https://www.instagram.com https://www.facebook.com https://www.youtube.com; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
-# Cache static assets aggressively
+# Asset filenames are not content-hashed; avoid immutable year-long caches.
 /images/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, must-revalidate
 
 /icons/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, must-revalidate
 
 /css/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=0, must-revalidate
+
+/js/*
+  Cache-Control: public, max-age=0, must-revalidate
 
 /manifest.json
   Cache-Control: public, max-age=86400, must-revalidate

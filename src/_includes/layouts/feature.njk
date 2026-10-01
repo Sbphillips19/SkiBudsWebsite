@@ -1,0 +1,23 @@
+---
+layout: base.njk
+productPage: true
+---
+<section class="band feature-page" aria-labelledby="feature-title">
+  <div class="shell">
+    {% include "partials/breadcrumbs.njk" %}
+    <header class="feature-page__header">
+      <p class="eyebrow">{{ eyebrow or 'Your mountain day with SkiBuds' }}</p>
+      <h1 id="feature-title">{{ title | escape }}</h1>
+      <p class="lede">{{ description | escape }}</p>
+      <div class="hero__actions">
+        <a href="/#waitlist" class="btn" data-track-cta="feature-join-waitlist">Join the launch waitlist &rarr;</a>
+        <a href="/faq/#launch">App launch questions</a>
+      </div>
+      <p class="feature-note">Coming soon to iOS and Android. This is a preview of the SkiBuds rebuild.</p>
+    </header>
+    <div class="feature-page__body blog-post__content">
+      {{ content | safe }}
+    </div>
+  </div>
+</section>
+{% include "partials/guide-links.njk" %}

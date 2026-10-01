@@ -1,16 +1,19 @@
 ---
 layout: base.njk
-title: Updates
-description: Latest news, launch updates, and behind-the-scenes from the SkiBuds team.
-eleventyExcludeFromCollections: true
+lastModified: 2026-09-29
+title: SkiBuds App News & Launch Updates
+seoTitle: Ski & Snowboard App News and Launch Updates
+description: Follow the SkiBuds rebuild for iOS and Android, with launch updates and previews of ski buddy discovery, snow forecasts, maps, and GPS tracking.
+pageType: CollectionPage
 ---
 
   <div class="shell">
     <p class="eyebrow">Updates</p>
-    <h1>SkiBuds Blog</h1>
+    <h1>SkiBuds app news<br>and launch updates</h1>
     <p class="lede">
       Launch updates, feature spotlights, and behind-the-scenes from the team rebuilding SkiBuds.
     </p>
+    <p>Planning your next day on snow? Read our <a href="/guides/">ski and snowboard guides</a> for finding a crew, sharing the drive, and understanding the forecast.</p>
 
     <div class="blog-list">
       {% for post in collections.blog %}
@@ -44,7 +47,7 @@ eleventyExcludeFromCollections: true
 
     <hr style="margin: 3rem 0;">
     <p style="text-align: center;">
-      <a href="/faq" class="btn btn--quiet">FAQ</a>
+      <a href="/faq/" class="btn btn--quiet">FAQ</a>
       <a href="/#waitlist" class="btn btn--quiet" data-track-cta="blog-join-waitlist">Join waitlist</a>
     </p>
   </div>

@@ -1,0 +1,15 @@
+<section class="band band--tint" aria-labelledby="guides-heading">
+  <div class="shell">
+    <p class="eyebrow">Plan your next day on snow</p>
+    <h2 id="guides-heading">Find a crew.<br>Make a better plan.</h2>
+    <div class="grid">
+      {% for guide in collections.guides %}
+      <article class="card">
+        <h3><a href="{{ guide.url }}">{{ guide.data.title | escape }}</a></h3>
+        <p>{{ guide.data.description | escape }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    <p><a href="/guides/">All ski and snowboard guides &rarr;</a></p>
+  </div>
+</section>

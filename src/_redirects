@@ -1,13 +1,13 @@
-# Vercel Redirects Configuration
-# https://vercel.com/docs/concepts/projects/project-configuration#redirects
+# Netlify-compatible fallback. Vercel uses vercel.json in the repository root.
 
 # Redirect .html extensions to extensionless URLs (canonical)
-/affiliates.html /affiliates 301
-/privacy.html /privacy 301
-/terms.html /terms 301
-
-# Ensure trailing slash on root
-/ / 200
+/index.html / 301
+/affiliates.html /affiliates/ 301
+/privacy.html /privacy/ 301
+/terms.html /terms/ 301
+/faq.html /faq/ 301
+/blog.html /blog/ 301
+/weather.html /weather/ 301
 
 # Normalize extensionless routes to trailing-slash URLs (match canonicals)
 /affiliates /affiliates/ 301
@@ -15,3 +15,9 @@
 /terms /terms/ 301
 /faq /faq/ 301
 /blog /blog/ 301
+/weather /weather/ 301
+/find-ski-buddies /find-ski-buddies/ 301
+/snowboard-buddies /snowboard-buddies/ 301
+/ski-carpool /ski-carpool/ 301
+/ski-tracking /ski-tracking/ 301
+/guides /guides/ 301

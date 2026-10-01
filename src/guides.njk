@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: Ski and snowboard guides
+seoTitle: Ski & Snowboard Guides for Your Next Mountain Day
+description: Learn how to find ski buddies, plan a mountain carpool, and read snow forecasts. Practical ski and snowboard guides from SkiBuds for your next resort day.
+pageType: CollectionPage
+lastModified: 2026-09-29
+---
+<section class="band">
+  <div class="shell">
+    {% include "partials/breadcrumbs.njk" %}
+    <p class="eyebrow">Plan a day together</p>
+    <h1>Ski and snowboard guides</h1>
+    <p class="lede">Find people to ride with, work out the drive, and understand the forecast. Use these guides to plan your next resort day while the new SkiBuds app is being rebuilt.</p>
+    <div class="blog-list">
+      {% for guide in collections.guides %}
+      <article class="blog-card">
+        <h2><a href="{{ guide.url }}">{{ guide.data.title | escape }}</a></h2>
+        <p class="blog-card__description">{{ guide.data.description | escape }}</p>
+        <a href="{{ guide.url }}">Read the guide &rarr;</a>
+      </article>
+      {% endfor %}
+    </div>
+    <p>Explore the upcoming app's <a href="/find-ski-buddies/">ski buddy discovery</a>, <a href="/snowboard-buddies/">snowboard partner discovery</a>, <a href="/weather/">mountain weather</a>, and <a href="/ski-tracking/">GPS tracking</a>.</p>
+  </div>
+</section>

@@ -1,8 +1,10 @@
 ---
 layout: base.njk
-title: Find Your People on the Mountain
-description: Plan your ski day with mountain weather, snow forecasts and powder alerts. Find riding partners, explore trail maps and track your runs with SkiBuds. Coming soon.
-eleventyExcludeFromCollections: true
+lastModified: 2026-09-29
+title: Ski & Snowboard App for Your Mountain Day
+seoTitle: 'Ski & Snowboard App: Buddies, Weather & GPS'
+description: Find ski buddies and snowboard partners, check snow forecasts, and track your runs with SkiBuds. Join the waitlist for the upcoming iOS and Android app.
+productPage: true
 preloadHero: true
 pageScripts:
   - waitlist-form.js
@@ -14,14 +16,14 @@ pageScripts:
   {% image "/images/WhistlerPeakView.jpg", "View from Whistler across snow-covered peaks and a jagged spire, with low cloud filling the valley below a hazy sun", "100vw", "hero__bg", "eager", "high", [640, 1080, 1920] %}
   <div class="shell">
     {% image "logo.png", "SkiBuds logo", "108px", "hero__logo rise", "eager", "high" %}
-    <h1 id="hero-heading" class="rise rise--2">Find your people on the mountain</h1>
+    <h1 id="hero-heading" class="rise rise--2">Find your ski crew.<br>Make a day of it.</h1>
     <p class="lede rise rise--3">
-      Find the snow. Find your crew. Make a day of it. Mountain weather, riding partners,
-      trail maps, and run tracking &mdash; together in SkiBuds.
+      A ski and snowboard app for finding riding partners, following snow forecasts,
+      exploring trail maps, and tracking your runs. Your mountain day, together in SkiBuds.
     </p>
     <div class="hero__actions rise rise--3">
-      <a href="/weather/" class="btn" data-track-cta="hero-weather">Explore mountain weather &rarr;</a>
-      <a href="#about" class="hero__link">See what&rsquo;s in the app</a>
+      <a href="#waitlist" class="btn" data-track-cta="hero-join-waitlist">Join the launch waitlist &rarr;</a>
+      <a href="/find-ski-buddies/" class="hero__link">Find people to ski with</a>
     </div>
 
     <p class="hero__availability rise rise--3">In the works for iOS &amp; Android <span aria-hidden="true">&middot;</span> {{ site.app.launchYear }}</p>
@@ -116,6 +118,7 @@ pageScripts:
         </svg>
         <h3>Ride with people at your level</h3>
         <p>Discover skiers and snowboarders by ability, riding style, and availability. Check out profiles, send a friend request, and find people looking for your kind of day.</p>
+        <a href="/find-ski-buddies/">Find ski buddies &rarr;</a>
       </article>
 
       <article class="card">
@@ -124,6 +127,7 @@ pageScripts:
         </svg>
         <h3>Keep your group together</h3>
         <p>Go from mountain and city chats to private conversations and group messages. Share photos, make a plan, and use opt-in friend locations on the map to help regroup.</p>
+        <a href="/ski-carpool/">Plan a ski carpool with your crew &rarr;</a>
       </article>
 
       <article class="card">
@@ -133,6 +137,7 @@ pageScripts:
         </svg>
         <h3>Track your runs</h3>
         <p>Record your day with GPS and automatic run and lift detection. Follow run count, vertical, distance, and speed, then revisit your route and activity history.</p>
+        <a href="/ski-tracking/">Explore ski and snowboard GPS tracking &rarr;</a>
       </article>
 
       <article class="card">
@@ -196,6 +201,7 @@ pageScripts:
     </div>
     <p class="feature-note">Discovery also includes Semi-Advanced, Backcountry, and Park options,
       with riding-style filters for groomers, powder, moguls, trees, and more.</p>
+    <p><a href="/snowboard-buddies/">Looking for snowboard buddies? Find your riding crew &rarr;</a></p>
   </div>
 </section>
 
@@ -241,6 +247,8 @@ pageScripts:
   </div>
 </section>
 
+{% include "partials/guide-links.njk" %}
+
 <!-- Partners -->
 <section class="band band--tint" aria-labelledby="partners-heading">
   <div class="shell">
@@ -250,7 +258,7 @@ pageScripts:
       SkiBuds works with shops, clubs, and trip organizers across North America.
     </p>
     <p style="margin-top:1.5rem;">
-      <a href="/affiliates" class="btn btn--quiet">See all partners &rarr;</a>
+      <a href="/affiliates/" class="btn btn--quiet">See all partners &rarr;</a>
     </p>
   </div>
 </section>

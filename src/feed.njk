@@ -6,10 +6,10 @@ eleventyExcludeFromCollections: true
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>{{ site.name }} Blog</title>
-    <link>{{ site.url }}/blog</link>
+    <link>{{ site.url }}/blog/</link>
     <description>{{ site.description }}</description>
     <language>en</language>
-    <lastBuildDate>{{ collections.blog[0].date | rfc822Date }}</lastBuildDate>
+    {% if collections.blog.length %}<lastBuildDate>{{ (collections.blog[0].data.lastModified or collections.blog[0].date) | rfc822Date }}</lastBuildDate>{% endif %}
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
     {% for post in collections.blog %}
     <item>

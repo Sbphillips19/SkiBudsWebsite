@@ -6,11 +6,11 @@
 
     <nav aria-label="Primary navigation" class="nav__menu" id="nav-menu">
       <ul class="nav__links">
-        <li><a href="/#about" {% if page.url == '/' %}aria-current="page"{% endif %}>What it does</a></li>
+        <li><a href="/find-ski-buddies/" {% if page.url == '/find-ski-buddies/' or page.url == '/snowboard-buddies/' %}aria-current="page"{% endif %}>Find riders</a></li>
         <li><a href="/weather/" {% if page.url == '/weather' or page.url == '/weather/' %}aria-current="page"{% endif %}>Weather &amp; snow</a></li>
-        <li><a href="/affiliates" {% if page.url == '/affiliates' or page.url == '/affiliates/' %}aria-current="page"{% endif %}>Partners</a></li>
-        <li><a href="/blog" {% if page.url == '/blog' or page.url == '/blog/' %}aria-current="page"{% endif %}>Updates</a></li>
-        <li><a href="/faq" {% if page.url == '/faq' or page.url == '/faq/' %}aria-current="page"{% endif %}>FAQ</a></li>
+        <li><a href="/guides/" {% if page.url == '/guides/' or parentUrl == '/guides/' %}aria-current="page"{% endif %}>Guides</a></li>
+        <li><a href="/blog/" {% if page.url == '/blog' or page.url == '/blog/' %}aria-current="page"{% endif %}>Updates</a></li>
+        <li><a href="/faq/" {% if page.url == '/faq' or page.url == '/faq/' %}aria-current="page"{% endif %}>FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="/#status" class="btn">Launch status</a>
